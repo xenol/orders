@@ -6,3 +6,5 @@ assets/bower_components/
 tmp
 .DS_Store
 .idea
+public
+build
