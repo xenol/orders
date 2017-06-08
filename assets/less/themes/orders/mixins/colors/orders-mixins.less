@@ -1,0 +1,106 @@
+// The orders theme color kit
+// ======================================
+@orders-white: @white;
+@orders-black: @black;
+@orders-squash: #f0a512;
+@orders-true-green: #1ab000;
+@orders-rouge: #be1e2d;
+@orders-faded-pink: #e5a5ab;
+@orders-faded-pink-two: #f2d2d5;
+@orders-cerulean: #0072bc;
+@orders-powder-blue: #b4d3f9;
+@orders-pale-blue: #f6f9fe;
+@orders-light-green: rgba(94, 173, 25, 0.05);
+@orders-button-green: #8bc541;
+
+// Set orders colors
+// --------------------------------------
+.set-orders( @suffix: white ){
+	@tmp: "orders-@{suffix}";
+	@color: @@tmp;
+}
+
+// Get orders colors
+// --------------------------------------
+.orders(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	color: @color @rest;
+}
+.orders-xs(@suffix, @rest...)
+{
+	.set-orders( @suffix );
+	.xs( color, @color, @rest);
+}
+.orders-sm(@suffix, @rest...)
+{
+	.set-orders( @suffix );
+	.sm( color, @color, @rest);
+}
+.orders-md(@suffix, @rest...)
+{
+	.set-orders( @suffix );
+	.md( color, @color, @rest);
+}
+.orders-lg(@suffix, @rest...)
+{
+	.set-orders( @suffix );
+	.lg( color, @color, @rest);
+}
+
+
+// Get orders background-colors
+// --------------------------------------
+.bg-orders(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	background-color: @color @rest;
+}
+.bg-orders-xs(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.xs( background-color, @color, @rest);
+}
+.bg-orders-sm(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.sm( background-color, @color, @rest);
+}
+.bg-orders-md(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.md( background-color, @color, @rest);
+}
+.bg-orders-lg(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.lg( background-color, @color, @rest);
+}
+
+// Get orders border-colors
+// --------------------------------------
+.border-orders(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	border-color: @color @rest;
+}
+.border-orders-xs(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.xs( border-color, @color, @rest);
+}
+.border-orders-sm(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.sm( border-color, @color, @rest);
+}
+.border-orders-md(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.md( border-color, @color, @rest);
+}
+.border-orders-lg(@suffix, @rest...)
+{
+	.set-orders(@suffix);
+	.lg( border-color, @color, @rest);
+}

@@ -1,0 +1,618 @@
+// Checklist types
+// --------------------------------------
+
+.checklist() {
+	
+	list-style: none;
+	padding: 0;
+	
+	& > li {
+		padding-left: 20px;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-family: 'FontAwesome';
+			content: "\f046";
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+}
+
+.checklist-check-square-o(){
+	.checklist();
+}
+
+.checklist-check-square(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f14a";
+		}
+	}
+}
+
+.checklist-circle(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f111";
+		}
+	}
+}
+
+.checklist-circle-o(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f10c";
+		}
+	}
+}
+
+.checklist-dot-circle-o(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f192";
+		}
+	}
+}
+
+.checklist-minus-square(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f146";
+		}
+	}
+}
+
+.checklist-minus-square-o(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f147";
+		}
+	}
+}
+
+.checklist-plus-square(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f0fe";
+		}
+	}
+}
+
+.checklist-plus-square-o(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f196";
+		}
+	}
+}
+
+.checklist-square(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f0c8";
+		}
+	}
+}
+
+.checklist-square-o(){
+	.checklist();
+	
+	& > li {
+		&::before {
+			content: "\f096";
+		}
+	}
+}
+
+
+// Checklist hover classes
+// --------------------------------------
+
+.checklist-check-square-o-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f046";
+		}
+	}
+}
+
+.checklist-check-square-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f14a";
+		}
+	}
+}
+
+.checklist-circle-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f111";
+		}
+	}
+}
+
+.checklist-circle-o-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f10c";
+		}
+	}
+}
+
+.checklist-dot-circle-o-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f192";
+		}
+	}
+}
+
+.checklist-minus-square-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f146";
+		}
+	}
+}
+
+.checklist-minus-square-o-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f147";
+		}
+	}
+}
+
+.checklist-plus-square-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f0fe";
+		}
+	}
+}
+
+.checklist-plus-square-o-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f196";
+		}
+	}
+}
+
+.checklist-square-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f0c8";
+		}
+	}
+}
+
+.checklist-square-o-hover(){
+	
+	& > li:hover {
+		&::before {
+			content: "\f096";
+		}
+	}
+}
+
+
+
+// Checklist colors
+// --------------------------------------
+.checklist-colors() {
+	& > li {
+		&::before {
+			.primary();
+		}
+	}
+}
+
+.checklist-primary-colors() {
+	.checklist-colors();
+}
+	
+.checklist-success-colors() {
+	& > li {
+		&::before {
+			.success();
+		}
+	}
+}
+
+.checklist-info-colors() {
+	& > li {
+		&::before {
+			.info();
+		}
+	}
+}
+
+.checklist-warning-colors() {
+	& > li {
+		&::before {
+			.warning();
+		}
+	}
+}
+
+.checklist-danger-colors() {
+	& > li {
+		&::before {
+			.danger();
+		}
+	}
+}
+
+.checklist-text-colors() {
+	& > li {
+		&::before {
+			.text();
+		}
+	}
+}
+
+.checklist-body-colors() {
+	& > li {
+		&::before {
+			.body();
+		}
+	}
+}
+
+
+
+// Checklist hover colors
+// --------------------------------------
+.checklist-colors-hover() {
+	& > li:hover {
+		&::before {
+			.primary();
+		}
+	}
+}
+
+.checklist-primary-colors-hover() {
+	.checklist-colors-hover();
+}
+	
+.checklist-success-colors-hover() {
+	& > li:hover {
+		&::before {
+			.success();
+		}
+	}
+}
+
+.checklist-info-colors-hover() {
+	& > li:hover {
+		&::before {
+			.info();
+		}
+	}
+}
+
+.checklist-warning-colors-hover() {
+	& > li:hover {
+		&::before {
+			.warning();
+		}
+	}
+}
+
+.checklist-danger-colors-hover() {
+	& > li:hover {
+		&::before {
+			.danger();
+		}
+	}
+}
+
+.checklist-text-colors-hover() {
+	& > li:hover {
+		&::before {
+			.text();
+		}
+	}
+}
+
+.checklist-body-colors-hover() {
+	& > li:hover {
+		&::before {
+			.body();
+		}
+	}
+}
+
+
+
+// Check
+// --------------------------------------
+
+.check() {
+	
+	padding: 0;
+	padding-left: 20px;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		left: 0;
+		font-family: 'FontAwesome';
+		content: "\f046";
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+.check-check-square-o(){
+	.check();
+}
+
+.check-check-square(){
+	.check();
+	
+	&::before {
+		content: "\f14a";
+	}
+}
+
+.check-circle(){
+	.check();
+	
+	&::before {
+		content: "\f111";
+	}
+}
+
+.check-circle-o(){
+	.check();
+	
+	&::before {
+		content: "\f10c";
+	}
+}
+
+.check-dot-circle-o(){
+	.check();
+	
+	&::before {
+		content: "\f192";
+	}
+}
+
+.check-minus-square(){
+	.check();
+	
+	&::before {
+		content: "\f146";
+	}
+}
+
+.check-minus-square-o(){
+	.check();
+	
+	&::before {
+		content: "\f147";
+	}
+}
+
+.check-plus-square(){
+	.check();
+	
+	&::before {
+		content: "\f0fe";
+	}
+}
+
+.check-plus-square-o(){
+	.check();
+	
+	&::before {
+		content: "\f196";
+	}
+}
+
+._check-square(){
+	.check();
+	
+	&::before {
+		content: "\f0c8";
+	}
+}
+
+._check-square-o(){
+	.check();
+	
+	&::before {
+		content: "\f096";
+	}
+}
+
+
+// Check hover-classes
+// --------------------------------------
+
+.check-check-square-o-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f046";
+		}
+	}
+}
+
+.check-check-square-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f14a";
+		}
+	}
+}
+
+.check-circle-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f111";
+		}
+	}
+}
+
+.check-circle-o-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f10c";
+		}
+	}
+}
+
+.check-dot-circle-o-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f192";
+		}
+	}
+}
+
+.check-minus-square-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f146";
+		}
+	}
+}
+
+.check-minus-square-o-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f147";
+		}
+	}
+}
+
+.check-plus-square-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f0fe";
+		}
+	}
+}
+
+.check-plus-square-o-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f196";
+		}
+	}
+}
+
+.check-square-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f0c8";
+		}
+	}
+}
+
+.check-square-o-hover(){
+	
+	&:hover {
+		&::before {
+			content: "\f096";
+		}
+	}
+}
+
+
+
+// Check colors
+// --------------------------------------
+
+.check-colors(){
+	&::before {
+		.primary();
+	}
+}
+
+.check-primary-colors() {
+	.check-colors();
+}
+
+.check-success-colors() {
+	&::before {
+		.success();
+	}
+}
+
+.check-info-colors() {
+	&::before {
+		.info();
+	}
+}
+
+.check-warning-colors() {
+	&::before {
+		.warning();
+	}
+}
+
+.check-danger-colors() {
+	&::before {
+		.danger();
+	}
+}
+
+.check-text-colors() {
+	&::before {
+		.text();
+	}
+}
+
+.check-body-colors() {
+	&::before {
+		.body();
+	}
+}

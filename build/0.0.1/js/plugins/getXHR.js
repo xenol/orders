@@ -1,0 +1,1 @@
+"use strict";define("plugins/getXHR",[],function(){function t(){var t=void 0;try{t=new ActiveXObject("Msxml2.XMLHTTP")}catch(e){try{t=new ActiveXObject("Microsoft.XMLHTTP")}catch(e){t=!1}}return t||"undefined"==typeof XMLHttpRequest||(t=new XMLHttpRequest),t}window.getXHR=t});

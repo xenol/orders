@@ -1,0 +1,27 @@
+// Box-Shadow-Top Container
+// Container (100% x 30px) with a top shadow
+// ======================================
+
+.box-shadow-top
+{
+	overflow: hidden;
+	position: relative;
+	
+	&::before
+	{
+		content: "";
+		position: absolute;
+		opacity: 0.5;
+		top: -25px;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+		width: 90%;
+		height: 10px;
+		background: #000;
+		border-bottom-right-radius: 50%;
+		border-bottom-left-radius: 50%;
+		box-shadow: 0 1px 20px 15px #000;
+	}
+}

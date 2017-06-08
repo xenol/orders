@@ -1,0 +1,180 @@
+// Rating module with stars
+// ======================================
+// @dependecies: ../fonts/font-awesome
+
+.stars
+{
+	&:before
+	{
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		content: "\f006\f006\f006\f006\f006";
+		font-size: 21px;
+		line-height: 1;
+		letter-spacing: 4px;
+		padding: 0 2px;
+	}
+	
+	&.stars-1
+	{
+		&:before
+		{
+			content: "\f005\f006\f006\f006\f006";
+		}
+	}
+	
+	&.stars-2
+	{
+		&:before
+		{
+			content: "\f005\f005\f006\f006\f006";
+		}
+	}
+	
+	&.stars-3
+	{
+		&:before
+		{
+			content: "\f005\f005\f005\f006\f006";
+		}
+	}
+	
+	&.stars-4
+	{
+		&:before
+		{
+			content: "\f005\f005\f005\f005\f006";
+		}
+	}
+	
+	&.stars-5
+	{
+		&:before
+		{
+			content: "\f005\f005\f005\f005\f005";
+		}
+	}
+	
+	&.stars-sm
+	{
+		&:before
+		{
+			font-size: 14px;
+			letter-spacing: 3px;
+		}
+	}
+	
+	&.stars-lg
+	{
+		&:before
+		{
+			font-size: 30px;
+			letter-spacing: 4px;
+		}
+	}
+}
+
+.stars.active
+{
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	position: relative;
+	font-size: 0;
+	display: inline;
+	
+	&:before
+	{
+		display: none;
+	}
+	
+	& label
+	{
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		z-index: 2;
+		line-height: 0;
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		font-size: 0;
+		
+		&::before
+		{
+			content: "\f006";
+			font-size: 21px;
+			line-height: 1;
+			padding: 0 2px;
+		}
+		
+		&.active::before
+		{
+			content: "\f005";
+		}
+	}
+	
+	& input
+	{
+		visibility: hidden;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+	}
+	
+	& label.star:hover::before,
+	& label.star:hover ~ label.star::before
+	{
+		content: "\f005" !important;
+	}
+	
+	& input.star:checked ~ label.star::before
+	{
+		content: "\f005";
+	}
+	
+	&:hover input.star:checked ~ label.star::before
+	{
+		content: "\f006";
+	}
+	
+	& label.star-reset::before
+	{
+		content: "\f014";
+		color: @text-color;
+		opacity: 0.4;
+	}
+	
+	& label.star-reset:hover::before
+	{
+		content: "\f1f8";
+		//opacity: 1 !important;
+	}
+	
+	& input.star-reset:checked ~ label.star-reset
+	{
+		display: none;
+	}
+	
+	& input.star-reset ~ label.star-reset
+	{
+		display: inline-block;
+	}
+	
+	&.stars-sm
+	{
+		& label:before
+		{
+			font-size: 14px;
+		}
+	}
+	
+	&.stars-lg
+	{
+		& label:before
+		{
+			font-size: 30px;
+			padding: 0 2px;
+		}
+	}
+}

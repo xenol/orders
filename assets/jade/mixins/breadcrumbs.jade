@@ -1,0 +1,14 @@
+//---------------------------
+//- Breadcrumbs
+//---------------------------
+
+mixin breadcrumbs( num )
+	+ol( num )( class="breadcrumb" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == num - 1 } )
+				- if( i == num - 1 )
+					| #{loremIpsum(25)}
+				- else
+					+a() #{loremIpsum(10)}

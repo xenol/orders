@@ -1,0 +1,94 @@
+//- Modal mixin
+//--------------------------------------
+mixin modal( className )
+	- var defaults = {};
+		- defaults["aria-labelledby"] = "modalLabel" + randInt(100, 1000);
+		- defaults.class = "fade";
+		- defaults.id = "modal" + randInt(100, 1000);
+		- defaults.role= "dialog"
+		- defaults.tabindex= -1;
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	.modal&attributes( attributes )
+			- if( block )
+				+modalDialog( className, attributes["aria-labelledby"] )
+					block
+			- else
+				+modalDialog( className, attributes["aria-labelledby"] )
+			
+//- Modal Dialog mixin
+//--------------------------------------
+mixin modalDialog( className, labelledby )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		- defaults.role= "document";
+		
+	.modal-dialog&attributes( jsonMerge(attributes, defaults) )
+		.modal-content
+			- if( block )
+				block
+			- else
+				+modalHeader( labelledby )
+				+modalBody()
+				+modalFooter()
+			
+//- Modal Header mixin
+//--------------------------------------
+mixin modalHeader( label, tag )
+	.modal-header&attributes( attributes )
+		+buttonDismiss()(data-dismiss= "modal")
+		- if( block )
+			block
+		- else
+			+modalTitle( tag )(id= label)
+			
+//- Modal Title mixin
+//--------------------------------------
+mixin modalTitle( tag )
+	- var defaults = {};
+		- defaults.id = "modalLabel" + randInt(100, 1000);
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	#{tag ? tag : "h4"}.modal-title&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(30)}
+			
+//- Modal Body mixin
+//--------------------------------------
+mixin modalBody()
+	.modal-body&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+			
+//- Modal Footer mixin
+//--------------------------------------
+mixin modalFooter()
+	.modal-footer&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+button()(data-dismiss= "modal") Закрыть
+			+btnPrimary() Отправить
+			
+			
+			
+//--------------------------------------
+//- Modal LG mixin
+//--------------------------------------
+mixin modalLg()
+	+modal( "modal-lg" )&attributes( attributes )
+		- if( block )
+			block
+	
+//- Modal SM mixin
+//--------------------------------------
+mixin modalSm()
+	+modal( "modal-sm" )&attributes( attributes )
+		- if( block )
+			block

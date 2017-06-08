@@ -1,0 +1,29 @@
+@panel-padding: @thumbnail-padding;
+
+.panel
+{
+	&.gallery-sm,
+	&.panel-gallery-sm
+	{
+		& > .panel-body
+		{
+			padding: @panel-padding;
+		}
+	}
+	
+		
+	&.wide-sm,
+	&.panel-wide-sm
+	{
+		& > .panel-body
+		{
+			padding: 0;
+		}
+	}
+	
+	&.fixed-sm,
+	&.panel-fixed-sm
+	{
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,11 @@
+extends section-main
+
+append section-main-args
+	- sectionMainTitle.class = "text-center";
+
+prepend section-main-title
+	include /partials/blocks/icon/block-icon-check
+
+block section-main-content
+	.text-center.p-t-15.m-b-20
+		a.bold( href="#" title="" ) Мои заказы

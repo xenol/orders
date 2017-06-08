@@ -1,0 +1,64 @@
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width-xs: 10px;
+@grid-gutter-width-sm: 15px;
+
+
+// Secondary line-height
+@line-height-secondary: 1.39;
+
+// Typography
+// ------------------------------------
+//## Font, line-height, and color for body text, headings, and more.
+
+
+@font-family-sans-serif-condensed:  @font-family-sans-serif;
+@font-family-fontawesome:  'FontAwesome';
+@font-family-lobster:  'Lobster';
+
+
+//** Font weights
+@font-sans-serif-light:  300;
+@font-sans-serif-normal: 400;
+@font-sans-serif-bold:   700;
+@font-sans-serif-black:  900;
+
+/*
+@font-sans-serif-condensed-light:  300;
+@font-sans-serif-condensed-normal: 400;
+@font-sans-serif-condensed-bold:   700;
+@font-sans-serif-condensed-black:  900;
+*/
+
+@font-serif-light:  300;
+@font-serif-normal: 400;
+@font-serif-bold:   700;
+@font-serif-black:  900;
+
+@font-fontawesome-normal: 400;
+@font-lobster-normal: 400;
+
+
+//== Images Ratio
+@image-ratio-base: 1.9;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-default-text:             @text-color;
+@state-default-bg:               @gray-lighter;
+@state-default-border:           darken(spin(@state-default-bg, -5), 15%);
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+@alert-default-bg:            @state-default-bg;
+@alert-default-text:          @state-default-text;
+@alert-default-border:        @state-default-border;

@@ -1,0 +1,39 @@
+//- Loop for Bootstrap cols mixin
+//--------------------------------------
+mixin loopCols( num, xs, sm, md, lg )
+	- var cols = {};
+	- var sum = { 'xs': 0, 'sm': 0, 'md': 0, 'lg': 0};
+	- var i = 0;
+	- var clearfixClass = (attributes && attributes.clearfixClass) ? attributes.clearfixClass : '';
+	- cols.xs = xs ? typeof xs === "object" ? xs : [xs] : [];
+	- cols.sm = sm ? typeof sm === "object" ? sm : [sm] : [];
+	- cols.md = md ? typeof md === "object" ? md : [md] : [];
+	- cols.lg = lg ? typeof lg === "object" ? lg : [lg] : [];
+	
+	+loop( num )
+		- var className = [];
+		- var num = { 'xs': 0, 'sm': 0, 'md': 0, 'lg': 0};
+		- var classClearfix = [];
+		
+		- if( cols.xs.length ) { num.xs = (i < cols.xs.length ? cols.xs[i] : cols.xs[cols.xs.length - 1]); sum.xs += num.xs; className.push("col-xs-" + num.xs); }
+		- if( cols.sm.length ) { num.sm = (i < cols.sm.length ? cols.sm[i] : cols.sm[cols.sm.length - 1]); sum.sm += num.sm; className.push("col-sm-" + num.sm); }
+		- if( cols.md.length ) { num.md = (i < cols.md.length ? cols.md[i] : cols.md[cols.md.length - 1]); sum.md += num.md; className.push("col-md-" + num.md); }
+		- if( cols.lg.length ) { num.lg = (i < cols.lg.length ? cols.lg[i] : cols.lg[cols.lg.length - 1]); sum.lg += num.lg; className.push("col-lg-" + num.lg); }
+		
+		div( class= className.join(' ') )
+			block
+		
+		- function visibleXS() { classClearfix.push("visible-xs-block"); if( !cols.sm.length ) visibleSM(); }
+		- function visibleSM() { classClearfix.push("visible-sm-block"); if( !cols.md.length ) visibleMD(); }
+		- function visibleMD() { classClearfix.push("visible-md-block"); if( !cols.lg.length ) visibleLG(); }
+		- function visibleLG() { classClearfix.push("visible-lg-block"); }
+		
+		- if( sum.xs && ( num.xs != 15 && sum.xs % 12 === 0 || sum.xs % 75 === 0 ) ) { visibleXS(); sum.xs = 0; }
+		- if( sum.sm && ( num.sm != 15 && sum.sm % 12 === 0 || sum.sm % 75 === 0 ) ) { visibleSM(); sum.sm = 0; }
+		- if( sum.md && ( num.md != 15 && sum.md % 12 === 0 || sum.md % 75 === 0 ) ) { visibleMD(); sum.md = 0; }
+		- if( sum.lg && ( num.lg != 15 && sum.lg % 12 === 0 || sum.lg % 75 === 0 ) ) { visibleLG(); sum.lg = 0; }
+		
+		- if( classClearfix.length )
+			.clearfix( class= clearfixClass class= classClearfix.join(' ') )
+		
+		- i++;

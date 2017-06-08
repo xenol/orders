@@ -1,0 +1,12 @@
+extends /extends/empty
+	
+append args
+	- body = { class: "clean" };
+	- header = {};
+	- main = {};
+	- footer = {};
+
+block content-row
+	.container
+		.row-col
+			block content

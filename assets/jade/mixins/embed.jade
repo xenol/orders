@@ -1,0 +1,27 @@
+//- Embed mixin
+//--------------------------------------
+mixin embed( src, className )
+	- var defaults = {};
+		- defaults.class = className ? className : "embed-responsive-16by9";
+		- defaults.src = src ? src : "//www.youtube.com/embed/zpOULjyy-n8?rel=0";
+		
+	.embed.embed-responsive
+		iframe.embed-responsive-item&attributes( jsonMerge(attributes, defaults) )
+		
+		- if( block )
+			block
+
+//- Embed mixin 16:9
+//--------------------------------------
+mixin embed16by9( src )
+	+embed( src, "embed-responsive-16by9" )&attributes( attributes )
+		- if( block )
+			block
+
+
+//- Embed mixin 4:3
+//--------------------------------------
+mixin embed4by3( src )
+	+embed( src, "embed-responsive-4by3" )&attributes( attributes )
+		- if( block )
+			block

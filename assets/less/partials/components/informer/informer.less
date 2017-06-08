@@ -1,0 +1,59 @@
+.informer {
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid @panel-default-border;
+	border-left-width: 5px;
+	border-radius: @border-radius-base;
+	
+	&.informer-wide {
+		border-width: 0 0 0 5px;
+		border-radius: 0;
+		padding: 10px 20px;
+	}
+	
+	&__title {
+		margin-top: 0;
+		margin-bottom: 5px;
+		//font-weight: normal;
+	}
+	
+	// Informer info
+	&.informer-info {
+		border-left-color: desaturate( @brand-info, 40% );
+	}
+	
+	&-info__title {
+		color: desaturate( @brand-info, 40% );
+		font-weight: normal;
+	}
+	
+	// Informer success
+	&.informer-success {
+		border-left-color: shade( @brand-success, 10% );
+	}
+	
+	&-success__title {
+		color: shade( @brand-success, 10% );
+		font-weight: normal;
+	}
+	
+	// Informer warning
+	&.informer-warning {
+		border-left-color: shade( @brand-warning, 30% );
+	}
+	
+	&-warning__title {
+		color: shade( @brand-warning, 30% );
+		font-weight: normal;
+	}
+	
+	// Informer danger
+	&.informer-danger {
+		border-left-color: shade( @brand-danger, 20% );
+	}
+	
+	&-danger__title {
+		color: shade( @brand-danger, 20% );
+		font-weight: normal;
+	}
+}

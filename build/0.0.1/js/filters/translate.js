@@ -1,0 +1,1 @@
+"use strict";define("filters/module",["angular"],function(t){return t.module("app.filters",[])}),define("filters/translate",["./module"],function(t){return t.filter("translate",["$http","$rootScope",function(t,n){return function(t){return n.translate[String(t)]?n.translate[String(t)]:String(t)}}])});

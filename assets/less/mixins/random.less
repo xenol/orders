@@ -1,0 +1,11 @@
+/* Mixin to generate random number;
+   int should be 0 or 1, 1 being to make it an integer 
+*/
+.makeRandom( @min: 0, @max: @min+1 ) { 
+  .checkInt() {
+    @getNum: `Math.random() * (@{max} - @{min} + 1)`;
+    @base: unit(`Math.floor(@{getNum})`);
+  }
+  .checkInt();
+  @randNum: @base + @min + 0px;
+}

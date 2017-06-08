@@ -1,0 +1,21 @@
+//----------------------------------
+//- Tabs mixins
+//----------------------------------
+
+//- Simple Tabs mixin
+//----------------------------------
+mixin tabs( num )
+	+ul( num )( class="nav nav-tabs" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == 0 } role="presentation" ): +a() #{loremIpsum(10)}
+
+//- Tabs Justify mixin
+//----------------------------------
+mixin tabsJustify( num )
+	+tabs( num )(class="nav-justified")
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == 0 } role="presentation" ): +a() #{loremIpsum(10)}

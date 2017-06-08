@@ -1,0 +1,41 @@
+// Button variants addon
+// ----------------------------------------------
+// @dependencies: variables/bootstrap.less
+
+.btn-lg() {
+	padding: @padding-large-vertical @padding-large-horizontal;
+	font-size: @font-size-large;
+	line-height: @line-height-large;
+	border-radius: @border-radius-large;
+}
+
+.btn-md() {
+	padding: @padding-base-vertical @padding-base-horizontal;
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+	border-radius: @border-radius-base;
+}
+
+.btn() {
+	.btn-md();
+}
+
+.btn-sm() {
+	padding: @padding-small-vertical @padding-small-horizontal;
+	font-size: @font-size-small;
+	line-height: @line-height-small;
+	border-radius: @border-radius-small;
+}
+
+.btn-xs() {
+	padding: @padding-xs-vertical @padding-xs-horizontal;
+	font-size: @font-size-small;
+	line-height: @line-height-small;
+	border-radius: @border-radius-small;
+}
+
+.btn-block()
+{
+	display: block;
+	width: auto;
+}

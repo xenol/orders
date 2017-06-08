@@ -1,0 +1,54 @@
+@import "@{elements-path}/bootstrap/bootstrap";
+
+.price-slider {
+	
+	& .price-slider-range {
+		height: 10px;
+		border-radius: 2px;
+		
+		& > .ui-slider-handle {
+			border-radius: 50%;
+			top: 50%;
+			transform: translateY(-50%);
+			border: 1px solid #ccc;
+		}
+	}
+	
+	.price-slider-colors();
+}
+
+.ui-slider-price {
+	font-size: 30px;
+	.font-type(sans-condensed);
+	.ui-slider-price-colors();
+}
+
+.form-control-static > .price-slider-range {
+	margin-top: 5px;
+}
+
+.price-slider-colors() {
+
+	& .price-slider-range {
+		background: @gray-light;
+		border-left: none;
+		border-right: none;
+		border-top-color: fade( @black, 20% );
+		border-bottom-color: @white;
+		
+		& > .ui-slider-range {
+			background: @brand-danger;
+		}
+		
+		& > .ui-slider-handle {
+			border: none;
+			background: @brand-danger;
+			box-shadow: inset 0px 0px 1px 0px fade(@black, 80%);
+			outline: none;
+		}
+	}
+}
+
+.ui-slider-price-colors(){
+  .danger();
+}

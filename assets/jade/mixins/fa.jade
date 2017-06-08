@@ -1,0 +1,277 @@
+//- Font Awesome mixin
+//--------------------------------------
+mixin fa( className, tag )
+	- var defaults = {};
+		- defaults["aria-hidden"] = "true";
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	#{tag ? tag : "i"}.fa&attributes( attributes )
+
+	- if( block )
+		block
+
+//- Font Awesome FW mixin
+//--------------------------------------
+mixin faFW( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+fa( attributes.class + " fa-fw", tag )
+
+	- if( block )
+		block
+
+
+//- Larger Icons
+//--------------------------------------
+//- Font Awesome LG mixin
+//--------------------------------------
+mixin faLG( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+fa( attributes.class + " fa-lg", tag )
+
+	- if( block )
+		block
+	
+//- Font Awesome 2x mixin
+//--------------------------------------
+mixin fa2x( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+fa( attributes.class + " fa-2x", tag )
+
+	- if( block )
+		block
+
+	
+//- Font Awesome 3x mixin
+//--------------------------------------
+mixin fa3x( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+fa( attributes.class + " fa-3x", tag )
+
+	- if( block )
+		block
+
+	
+//- Font Awesome 4x mixin
+//--------------------------------------
+mixin fa4x( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+fa( attributes.class + " fa-4x", tag )
+
+	- if( block )
+		block
+
+	
+//- Font Awesome 5x mixin
+//--------------------------------------
+mixin fa5x( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+fa( attributes.class + " fa-5x", tag )
+	
+	- if( block )
+		block
+
+
+
+//- Stacked Icons
+//--------------------------------------
+//- Font Awesome Stack mixin
+//--------------------------------------
+mixin faStack( className2x, className1x, classNameStack )
+	- var defaults = {};
+		- defaults.className2x = className2x ? className2x : "fa-circle";
+		- defaults.className1x = className1x ? className1x : faRand() + " fa-inverse";
+		- defaults.classNameStack = classNameStack ? classNameStack : "fa-lg";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	span.fa-stack( class= attributes.classNameStack ? attributes.classNameStack : "" )
+		+fa( "fa-stack-2x " + attributes.className2x )
+		+fa( "fa-stack-1x " + attributes.className1x )
+		
+	- if( block )
+		block
+
+//- Font Awesome Stack-Circle mixin
+//--------------------------------------
+mixin faCircle( className, classNameStack )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+faStack( "fa-circle", attributes.class + " fa-inverse", classNameStack )
+		
+	- if( block )
+		block
+
+//- Font Awesome Stack-Square mixin
+//--------------------------------------
+mixin faSquare( className, classNameStack )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+faStack( "fa-square", attributes.class + " fa-inverse", classNameStack )
+		
+	- if( block )
+		block
+
+//- Font Awesome Stack-Square-O mixin
+//--------------------------------------
+mixin faSquareO( className, classNameStack )
+	- var defaults = {};
+		- defaults.class = className ? className : faRand();
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+faStack( "fa-square-o", attributes.class, classNameStack )
+		
+	- if( block )
+		block
+
+//- Font Awesome Stack-Ban mixin
+//--------------------------------------
+mixin faBan( className, classNameStack )
+	- var defaults = {};
+		- defaults.className = className ? className : faRand();
+		- defaults.classNameStack = classNameStack ? classNameStack : "fa-lg";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	span.fa-stack( class= attributes.classNameStack ? attributes.classNameStack : "" )
+		+fa( "fa-stack-1x " + attributes.className )
+		+fa( "fa-stack-2x fa-ban text-danger" )
+		
+	- if( block )
+		block
+
+
+//- Frequency fa mixins
+//--------------------------------------
+//- Fa Span mixin
+//--------------------------------------
+mixin faSpan( classFa, classSpan, title )
+	- var defaults = {};
+		- defaults.classFa = classFa ? classFa : faRand() + " warning";
+		- defaults.classSpan = classSpan ? classSpan : "footer-elem";
+		- defaults.title = title ? title : false;
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	span( class= defaults.classSpan title= attributes.title )
+		+fa( attributes.classFa )
+		
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Fa Link mixin
+//--------------------------------------
+mixin faLink( classFa, classLink, title )
+	- var defaults = {};
+		- defaults.classFa = classFa ? classFa : faRand() + " warning";
+		- defaults.classLink = classLink ? classLink : "_u footer-elem";
+		- defaults.title = title ? title : false;
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	+a()&attributes({ class: attributes.classLink, title: attributes.title })
+		+fa(attributes.classFa)
+		
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Fa Date mixin
+//--------------------------------------
+mixin faDate( classFa, title )
+	- var defaults = {};
+		- defaults.classFa = classFa ? classFa : "fa-calendar-o warning";
+		- defaults.title = title ? title : "Дата публикации: " + randInt(10,31) + " декабря 2016";
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	+faSpan()&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{randInt(10,31)} декабря
+			
+//- Fa Comments mixin
+//--------------------------------------
+mixin faComments( classFa, title )
+	- var defaults = {};
+		- defaults.classFa = classFa ? classFa : "fa-comments-o warning";
+		- defaults.title = title ? title : "Комментариев: " + toPrice( randInt(1000,9999) );
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+faLink()&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{toPrice( randInt(1000,9999) )}
+			
+//- Fa Views mixin
+//--------------------------------------
+mixin faViews( classFa, title )
+	- var defaults = {};
+		- defaults.classFa = classFa ? classFa : "fa-eye warning";
+		- defaults.title = title ? title : "Просмотров: " + toPrice( randInt(1000,9999) );
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+faLink()&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{toPrice( randInt(1000,9999) )}
+			
+//- Font Awesome mixin
+//--------------------------------------
+mixin faRand( className )
+	+fa( faRand() + ( className ? " " + className : "") )
+	
+	- if( block )
+		block
+			
+			
+//- Font Awesome footer
+//--------------------------------------
+mixin faFooter( className )
+	footer.fa-footer( class= className ? className : "" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+faDate()
+			+faComments()
+			+faViews()

@@ -1,0 +1,65 @@
+mixin rowCols( count, colxs, colsm, colmd, collg )
+	- var defaults = {};
+		- defaults.count = count ? count : 12;
+		- defaults.colxs = colxs ? colxs : 12;
+		- defaults.colsm = colsm ? colsm : 6;
+		- defaults.colmd = colmd ? colmd : 4;
+		- defaults.collg = collg ? collg : 3;
+	
+	- attributes = jsonMerge( attributes, defaults );
+	
+	- var countxs = 0;
+	- var countsm = 0;
+	- var countmd = 0;
+	- var countlg = 0;
+	- var clearfix = "";
+	- var tmp = "";
+	
+	.row
+		+loop( attributes.count )
+			- tmp = attributes.colxs.toString().split(',');
+			- var colxs = parseInt( ( typeof tmp[index] !== "undefined" ) ? tmp[index] : tmp[0] );
+			
+			- tmp = attributes.colsm.toString().split(',');
+			- var colsm = parseInt( ( typeof tmp[index] !== "undefined" ) ? tmp[index] : tmp[0] );
+			
+			- tmp = attributes.colmd.toString().split(',');
+			- var colmd = parseInt( ( typeof tmp[index] !== "undefined" ) ? tmp[index] : tmp[0] );
+			
+			- tmp = attributes.collg.toString().split(',');
+			- var collg = parseInt( ( typeof tmp[index] !== "undefined" ) ? tmp[index] : tmp[0] );
+			
+			div(
+				class= 'col-xs-' + colxs
+				class= 'col-sm-' + colsm
+				class= 'col-md-' + colmd
+				class= 'col-lg-' + collg
+			)
+				- if ( block )
+					block
+				- else
+					.well #{loremIpsum(randInt(10, 100))}
+			
+			- countxs += colxs;
+			- countsm += colsm;
+			- countmd += colmd;
+			- countlg += collg;
+			
+			- if( ( colxs < 15 ) && ( colxs % 12 != 0 ) && ( countxs % 12 == 0 ) ) clearfix += " visible-xs";
+			- else if( countxs % 75 == 0 ) clearfix += " visible-xs";
+			
+			- if( ( colsm < 15 ) && ( colsm % 12 != 0 ) && ( countsm % 12 == 0 ) ) clearfix += " visible-sm";
+			- else if( countsm % 75 == 0 ) clearfix += " visible-sm";
+			
+			- if( ( colmd < 15 ) && ( colmd % 12 != 0 ) && ( countmd % 12 == 0 ) ) clearfix += " visible-md";
+			- else if( countmd % 75 == 0 ) clearfix += " visible-md";
+			
+			- if( ( collg < 15 ) && ( collg % 12 != 0 ) && ( countlg % 12 == 0 ) ) clearfix += " visible-lg";
+			- else if( countlg % 75 == 0 ) clearfix += " visible-lg";
+			
+			- if( clearfix && ( index < attributes.count - 1 ) )
+				- if( ( clearfix.indexOf("xs") + 1 ) && ( clearfix.indexOf("sm") + 1 ) && ( clearfix.indexOf("md") + 1 ) && ( clearfix.indexOf("lg") + 1 ) ) clearfix = "";
+				
+				.clearfix( class = clearfix ? clearfix : "" )
+				
+				- clearfix = "";

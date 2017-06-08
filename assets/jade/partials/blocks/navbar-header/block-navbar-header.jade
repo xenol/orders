@@ -1,0 +1,7 @@
+block navbar-header-args
+	- var navbarHeader = {};
+
+nav.navbar.navbar-default.block-navbar-header&attributes( navbarHeader )
+	ul.nav.navbar-nav.navbar-right
+		li: a.block-navbar-header__a( href="#" title="" ) Константинопольский К. #[i.icon-settings.block-navbar-header__icon]
+		li: a.block-navbar-header__a( href="#" title="" ) #[span.visible-xs-inline Выход] #[i.icon-logout.block-navbar-header__icon]

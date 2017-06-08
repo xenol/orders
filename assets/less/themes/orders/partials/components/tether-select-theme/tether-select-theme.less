@@ -1,0 +1,167 @@
+// The tether-select theme
+// ======================================
+.select-select {
+	display: none;
+	/* For when we are on a small touch device and want to use native controls */
+	pointer-events: none;
+	position: absolute;
+	opacity: 0;
+}
+
+.select-element,
+.select-element:after,
+.select-element:before,
+.select-element *,
+.select-element *:after,
+.select-element *:before {
+	box-sizing: border-box;
+}
+
+.select-element {
+	position: absolute;
+	display: none;
+}
+
+.select-element.select-open {
+	display: block !important;
+}
+
+.tether-select-theme,
+.tether-select-theme *,
+.tether-select-theme *:after,
+.tether-select-theme *:before {
+	box-sizing: border-box;
+}
+
+.tether-select-theme {
+	&.select {
+		z-index: @zindex-dropdown;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+			 -o-user-select: none;
+				user-select: none;
+		
+		@media screen and (max-width: @screen-xs-max) {
+			width: auto;
+		}
+		
+		
+		& .select-content {
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+			background: @white;
+			font-family: inherit;
+			color: inherit;
+			overflow: auto;
+			max-width: 18rem;
+			max-height: 18rem;
+			-webkit-overflow-scrolling: touch;
+			min-width: 100px;
+			
+			@media screen and (max-width: @screen-xs-max) {
+				width: 100%;
+				max-width: 100%;
+				max-height: 200px;
+			}
+		}
+		
+		& .select-options {
+			-webkit-tap-highlight-color: transparent;
+			-webkit-touch-callout: none;
+			margin: 0;
+			padding: 0;
+			
+			& .select-option {
+				-webkit-tap-highlight-color: transparent;
+				-webkit-touch-callout: none;
+				position: relative;
+				list-style: none;
+				margin: 0;
+				padding: @padding-base-vertical @padding-base-horizontal;
+				display: block;
+				cursor: pointer;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				
+				&:hover,
+				&.select-option-highlight {
+					background: @orders-button-green;
+					color: #fff;
+				}
+			}
+		}
+	}
+	
+	&.select-target {
+		display: inline-block;
+		vertical-align: middle;
+		*vertical-align: auto;
+		*zoom: 1;
+		*display: inline;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+		position: relative;
+		padding: @padding-base-vertical @padding-base-horizontal;
+		padding-right: 50px + @padding-base-horizontal;
+		height: (@line-height-computed + (@padding-base-vertical * 2) + 2);
+		border: 1px solid @input-border;
+		cursor: pointer;
+		color: @text-color;
+		text-decoration: none;
+		white-space: nowrap;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		line-height: @line-height-secondary;
+		
+		@media screen and (max-width: @screen-xs-max) {
+			width: 100%;
+		}
+		
+		&.select-target-lg {
+			height: 60px;
+			padding: @padding-large-vertical @padding-large-horizontal;
+			padding-right: 50px + @padding-large-horizontal;
+		}
+		
+		&:hover {
+			background-color: @dropdown-link-hover-bg;
+		}
+		
+		&.select-target-focused,
+		&.select-target-focused:focus {
+			outline: none;
+		}
+		
+		& b {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			height: 100%;
+			width: 50px;
+			
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				margin: auto;
+				top: 50%;
+				left: 50%;
+				transform: translate3D(-50%, -50%, 0);
+				height: 0;
+				width: 0;
+				border-top: 7px dashed @input-border;
+				border-right: 4px solid transparent;
+				border-left: 4px solid transparent;
+			}
+		}
+	}
+}

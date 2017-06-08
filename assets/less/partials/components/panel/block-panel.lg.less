@@ -1,0 +1,29 @@
+@panel-padding: @thumbnail-padding;
+
+.panel
+{
+	&.gallery-lg,
+	&.panel-gallery-lg
+	{
+		& > .panel-body
+		{
+			padding: @panel-padding;
+		}
+	}
+	
+		
+	&.wide-lg,
+	&.panel-wide-lg
+	{
+		& > .panel-body
+		{
+			padding: 0;
+		}
+	}
+	
+	&.fixed-lg,
+	&.panel-fixed-lg
+	{
+		overflow: hidden;
+	}
+}

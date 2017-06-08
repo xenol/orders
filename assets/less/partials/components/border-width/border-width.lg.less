@@ -1,0 +1,53 @@
+// Border Widths for lg mode
+// ======================================
+
+// border-top
+.b-t-0-lg {
+	border-top-width: 0 !important;
+}
+
+.b-t-1-lg {
+	border-top-width: 1px !important;
+}
+
+// border-bottom
+.b-b-0-lg {
+	border-bottom-width: 0 !important;
+}
+
+.b-b-1-lg {
+	border-bottom-width: 1px !important;
+}
+
+// border-right
+.b-r-0-lg {
+	border-right-width: 0 !important;
+}
+
+.b-r-1-lg {
+	border-right-width: 1px !important;
+}
+
+// border-left
+.b-l-0-lg {
+	border-left-width: 0 !important;
+}
+
+.b-l-1-lg {
+	border-left-width: 1px !important;
+}
+
+// borders left and right
+.b-x-0-lg:extend( .b-r-0-lg, .b-l-0-lg ) {};
+
+.b-x-1-lg:extend( .b-r-1-lg, .b-l-1-lg ) {};
+
+// borders top and bottom
+.b-y-0-lg:extend( .b-t-0-lg, .b-b-0-lg ) {};
+
+.b-y-1-lg:extend( .b-t-1-lg, .b-b-1-lg ) {};
+
+// borders all
+.b-a-0-lg:extend( .b-t-0-lg, .b-r-0-lg, .b-b-0-lg, .b-l-0-lg ) {}
+
+.b-a-1-lg:extend( .b-t-1-lg, .b-r-1-lg, .b-b-1-lg, .b-l-1-lg ) {}

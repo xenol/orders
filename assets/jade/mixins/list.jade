@@ -1,0 +1,82 @@
+//- List mixins
+//- ==================================
+
+//- List mixin
+//----------------------------------
+mixin list( num, tag )
+	- if( !num ) num = 1;
+	
+	#{tag ? tag : "ul"}&attributes( attributes )
+		+loop( num )
+			- if( block )
+				block
+			- else
+				+li()
+
+//- LI mixin
+//----------------------------------
+mixin li( className )
+	li( class= className ? className : "" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(25)}
+			
+			
+//- UL mixin
+//----------------------------------
+mixin ul( num )
+	+list( num, "ul" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()
+			
+//- OL mixin
+//----------------------------------
+mixin ol( num )
+	+list( num, "ol" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()
+
+//- Links List mixin
+//----------------------------------
+mixin aList( num )
+	+list( num, "div" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+a()
+
+//----------------------------------
+//- List Groups
+//----------------------------------
+
+//- UL Group mixin
+//----------------------------------
+mixin ulGroup( num )
+	+ul( num )( class="list-group" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li( "list-group-item" )
+
+//- OL Group mixin
+//----------------------------------
+mixin olGroup( num )
+	+ol( num )( class="list-group" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li( "list-group-item" )
+
+//- Links List mixin
+//----------------------------------
+mixin aGroup( num )
+	+aList( num )( class="list-group" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+a( "list-group-item" )

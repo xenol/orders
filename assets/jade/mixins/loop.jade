@@ -1,0 +1,10 @@
+//- Loop mixin
+//--------------------------------------
+mixin loop( num )
+	- var num = parseInt( num ) || 0;
+	
+	- if( num > 1 )
+		+loop( num - 1 )
+			block
+			
+	block

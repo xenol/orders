@@ -1,0 +1,53 @@
+// Border Widths for md mode
+// ======================================
+
+// border-top
+.b-t-0-md {
+	border-top-width: 0 !important;
+}
+
+.b-t-1-md {
+	border-top-width: 1px !important;
+}
+
+// border-bottom
+.b-b-0-md {
+	border-bottom-width: 0 !important;
+}
+
+.b-b-1-md {
+	border-bottom-width: 1px !important;
+}
+
+// border-right
+.b-r-0-md {
+	border-right-width: 0 !important;
+}
+
+.b-r-1-md {
+	border-right-width: 1px !important;
+}
+
+// border-left
+.b-l-0-md {
+	border-left-width: 0 !important;
+}
+
+.b-l-1-md {
+	border-left-width: 1px !important;
+}
+
+// borders left and right
+.b-x-0-md:extend( .b-r-0-md, .b-l-0-md ) {};
+
+.b-x-1-md:extend( .b-r-1-md, .b-l-1-md ) {};
+
+// borders top and bottom
+.b-y-0-md:extend( .b-t-0-md, .b-b-0-md ) {};
+
+.b-y-1-md:extend( .b-t-1-md, .b-b-1-md ) {};
+
+// borders all
+.b-a-0-md:extend( .b-t-0-md, .b-r-0-md, .b-b-0-md, .b-l-0-md ) {}
+
+.b-a-1-md:extend( .b-t-1-md, .b-r-1-md, .b-b-1-md, .b-l-1-md ) {}

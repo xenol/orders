@@ -1,0 +1,44 @@
+//- Stars mixin
+//---------------------------
+mixin stars( num )
+	- if( !num ) num = 0;
+	
+	.stars-rating
+		.stars( class= num ? "stars-" + num : "" )&attributes( attributes )
+		+starsSchema( num )
+	
+	- if( block )
+		block
+		
+//- Stars Actived
+//---------------------------
+mixin starsActive( num )
+	- if( !num ) num = 0;
+	
+	.stars-rating
+		.stars.active( class= num ? "stars-" + num : "" )&attributes( attributes )
+			- var id = "star-" + randInt(100,1000);
+			
+			input.star-reset( id= id type="radio" name="star" value="0" checked="checked" )
+			label.star-reset( for= id )
+			
+			+loop(5)
+				- id = "star-" + randInt(100,1000);
+				
+				input.star( id= id type="radio" name="star" value= 5 - index )
+				label.star( for= id )
+		
+		+starsSchema( num )
+	
+	- if( block )
+		block
+		
+//- Stars Actived
+//---------------------------
+mixin starsSchema( num )
+	span( itemscope="" itemtype="http://schema.org/Product" title="Рейтинг: #{num > 9 ? num/10 : num} - 2 голоса" )
+		meta( itemprop="name" content="титл" )
+		meta( itemprop="url" content="http://www.3dnews.ru/922550" )
+		span( itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" )
+			span( itemprop="ratingValue" ) #{num > 9 ? num/10 : num}
+			span( itemprop="ratingCount" ) 2

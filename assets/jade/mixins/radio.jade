@@ -1,0 +1,29 @@
+//- Radio mixin
+//---------------------------
+mixin radio( className )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.name = "radio";
+		- defaults.type = "radio";
+		- defaults.value = "";
+		- defaults.id = "radio-" + randInt(100, 1000);
+	
+	- attributes = jsonMerge(attributes, defaults);
+	
+	.radio( class= className )
+		input&attributes( attributes )
+		label( for= attributes.id )
+			- if( block )
+				block
+			- else
+				| #{loremIpsum(10)}
+			
+			
+//- Radio inline mixin
+//---------------------------
+mixin radioInline( className )
+	+radio("radio-inline " + (className ? className : ""))&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}

@@ -1,0 +1,32 @@
+extends /extends/default.jade
+	
+append args
+	- body.class = "front-end paced";
+	- var header = {};
+	- var main = {};
+	- var footer = {};
+
+block navbar-before
+	header#site-header
+		block navbar-row
+			block navbar
+				include /partials/blocks/navbar-header/block-navbar-header
+				
+block content-before
+	main#site-main.p-x-10
+		block content-row
+			.container
+				.row
+					.col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+						block content
+							span The Main Content
+	
+block footer-before
+	footer#site-footer( role="contentinfo" )
+		block footer-row
+			block footer
+				script.
+					var messages = {
+						"No services found": "Услуги не найдены",
+						"Failed to load data. Please try again later": "Не удалось загрузить данные, Пожалуйста, попробуйте повторить попытку позже",
+					};

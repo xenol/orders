@@ -1,0 +1,89 @@
+//- Informer mixin
+//-===========================
+mixin informer( tag )
+	#{tag ? tag : "div"}.informer&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+informerTitle()
+			p: +loremIpsum(200)
+			
+//- Informer Success mixin
+//---------------------------
+mixin informerSuccess( tag )
+	+informer( tag ).informer-success&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+informerTitle().informer-success__title
+			p: +loremIpsum(200)
+			
+//- Informer Info mixin
+//---------------------------
+mixin informerInfo( tag )
+	+informer( tag ).informer-info&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+informerTitle().informer-info__title
+			p: +loremIpsum(200)
+			
+//- Informer Warning mixin
+//---------------------------
+mixin informerWarning( tag )
+	+informer( tag ).informer-warning&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+informerTitle().informer-warning__title
+			p: +loremIpsum(200)
+			
+//- Informer Danger mixin
+//---------------------------
+mixin informerDanger( tag )
+	+informer( tag ).informer-danger&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+informerTitle().informer-danger__title
+			p: +loremIpsum(200)
+
+			
+//- Informer Wide mixin
+//---------------------------
+mixin informerWide( tag )
+	+informer( tag ).informer-wide&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+informerTitle()
+			p: +loremIpsum(200)
+			
+//- Informer Title mixin
+//---------------------------
+mixin informerTitle( tag )
+	#{tag ? tag : "h4"}.informer__title&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+loremIpsum(30)
+			
+//- Informer Success Title mixin
+//---------------------------
+mixin informerSuccessTitle( tag )
+	+informerTitle( tag ).informer-success__title&attributes( attributes )
+			
+//- Informer Info Title mixin
+//---------------------------
+mixin informerInfoTitle( tag )
+	+informerTitle( tag ).informer-info__title&attributes( attributes )
+			
+//- Informer Warning Title mixin
+//---------------------------
+mixin informerWarningTitle( tag )
+	+informerTitle( tag ).informer-warning__title&attributes( attributes )
+			
+//- Informer Danger Title mixin
+//---------------------------
+mixin informerDangerTitle( tag )
+	+informerTitle( tag ).informer-danger__title&attributes( attributes )

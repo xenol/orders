@@ -1,0 +1,16 @@
+// The orders theme button
+// ======================================
+.btn-orders {
+	.button-variant( @white, @orders-button-green, @orders-light-green );
+	.button-size( 15px; 35px; @font-size-base; 1; 0 );
+	min-width: 200px;
+	
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active {
+		background-color: @link-hover-color;
+		border-color: @link-hover-color;
+	}
+}

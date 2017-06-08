@@ -1,0 +1,57 @@
+//- Badge mixin
+//--------------------------------------
+mixin badge( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+	
+	span.badge&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{randInt(1,99)}
+			
+			
+//- Badge Primary mixin
+//--------------------------------------
+mixin badgePrimary()
+	+badge( "bg-primary" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{randInt(1,99)}
+			
+//- Badge Success mixin
+//--------------------------------------
+mixin badgeSuccess()
+	+badge( "bg-success" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{randInt(1,99)}
+			
+//- Badge Info mixin
+//--------------------------------------
+mixin badgeInfo()
+	+badge( "bg-info" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{randInt(1,99)}
+			
+//- Badge Warning mixin
+//--------------------------------------
+mixin badgeWarning()
+	+badge( "bg-warning" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{randInt(1,99)}
+			
+//- Badge Danger mixin
+//--------------------------------------
+mixin badgeDanger()
+	+badge( "bg-danger" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{randInt(1,99)}

@@ -1,0 +1,133 @@
+"use strict";
+
+/**
+ * @license RequireJS domReady 2.0.1 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.
+ * Available via the MIT or new BSD license.
+ * see: http://github.com/requirejs/domReady for details
+ */
+/*jslint */
+/*global require: false, define: false, requirejs: false,
+  window: false, clearInterval: false, document: false,
+  self: false, setInterval: false */
+
+define(function () {
+	'use strict';
+
+	var isTop = void 0,
+	    testDiv = void 0,
+	    scrollIntervalId = void 0,
+	    isBrowser = typeof window !== "undefined" && window.document,
+	    isPageLoaded = !isBrowser,
+	    doc = isBrowser ? document : null,
+	    readyCalls = [];
+
+	function runCallbacks(callbacks) {
+		var i = void 0;
+		for (i = 0; i < callbacks.length; i += 1) {
+			callbacks[i](doc);
+		}
+	}
+
+	function callReady() {
+		var callbacks = readyCalls;
+
+		if (isPageLoaded) {
+			//Call the DOM ready callbacks
+			if (callbacks.length) {
+				readyCalls = [];
+				runCallbacks(callbacks);
+			}
+		}
+	}
+
+	/**
+  * Sets the page as loaded.
+  */
+	function pageLoaded() {
+		if (!isPageLoaded) {
+			isPageLoaded = true;
+			if (scrollIntervalId) {
+				clearInterval(scrollIntervalId);
+			}
+
+			callReady();
+		}
+	}
+
+	if (isBrowser) {
+		if (document.addEventListener) {
+			//Standards. Hooray! Assumption here that if standards based,
+			//it knows about DOMContentLoaded.
+			document.addEventListener("DOMContentLoaded", pageLoaded, false);
+			window.addEventListener("load", pageLoaded, false);
+		} else if (window.attachEvent) {
+			window.attachEvent("onload", pageLoaded);
+
+			testDiv = document.createElement('div');
+			try {
+				isTop = window.frameElement === null;
+			} catch (e) {}
+
+			//DOMContentLoaded approximation that uses a doScroll, as found by
+			//Diego Perini: http://javascript.nwbox.com/IEContentLoaded/,
+			//but modified by other contributors, including jdalton
+			if (testDiv.doScroll && isTop && window.external) {
+				scrollIntervalId = setInterval(function () {
+					try {
+						testDiv.doScroll();
+						pageLoaded();
+					} catch (e) {}
+				}, 30);
+			}
+		}
+
+		//Check if document already complete, and if so, just trigger page load
+		//listeners. Latest webkit browsers also use "interactive", and
+		//will fire the onDOMContentLoaded before "interactive" but not after
+		//entering "interactive" or "complete". More details:
+		//http://dev.w3.org/html5/spec/the-end.html#the-end
+		//http://stackoverflow.com/questions/3665561/document-readystate-of-interactive-vs-ondomcontentloaded
+		//Hmm, this is more complicated on further use, see "firing too early"
+		//bug: https://github.com/requirejs/domReady/issues/1
+		//so removing the || document.readyState === "interactive" test.
+		//There is still a window.onload binding that should get fired if
+		//DOMContentLoaded is missed.
+		if (document.readyState === "complete") {
+			pageLoaded();
+		}
+	}
+
+	/** START OF PUBLIC API **/
+
+	/**
+  * Registers a callback for DOM ready. If DOM is already ready, the
+  * callback is called immediately.
+  * @param {Function} callback
+  */
+	function domReady(callback) {
+		if (isPageLoaded) {
+			callback(doc);
+		} else {
+			readyCalls.push(callback);
+		}
+		return domReady;
+	}
+
+	domReady.version = '2.0.1';
+
+	/**
+  * Loader Plugin API method
+  */
+	domReady.load = function (name, req, onLoad, config) {
+		if (config.isBuild) {
+			onLoad(null);
+		} else {
+			domReady(onLoad);
+		}
+	};
+
+	/** END OF PUBLIC API **/
+
+	return domReady;
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBsdWdpbnMvZG9tUmVhZHkuanMiXSwibmFtZXMiOlsiZGVmaW5lIiwiaXNUb3AiLCJ0ZXN0RGl2Iiwic2Nyb2xsSW50ZXJ2YWxJZCIsImlzQnJvd3NlciIsIndpbmRvdyIsImRvY3VtZW50IiwiaXNQYWdlTG9hZGVkIiwiZG9jIiwicmVhZHlDYWxscyIsInJ1bkNhbGxiYWNrcyIsImNhbGxiYWNrcyIsImkiLCJsZW5ndGgiLCJjYWxsUmVhZHkiLCJwYWdlTG9hZGVkIiwiY2xlYXJJbnRlcnZhbCIsImFkZEV2ZW50TGlzdGVuZXIiLCJhdHRhY2hFdmVudCIsImNyZWF0ZUVsZW1lbnQiLCJmcmFtZUVsZW1lbnQiLCJlIiwiZG9TY3JvbGwiLCJleHRlcm5hbCIsInNldEludGVydmFsIiwicmVhZHlTdGF0ZSIsImRvbVJlYWR5IiwiY2FsbGJhY2siLCJwdXNoIiwidmVyc2lvbiIsImxvYWQiLCJuYW1lIiwicmVxIiwib25Mb2FkIiwiY29uZmlnIiwiaXNCdWlsZCJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7Ozs7QUFLQTtBQUNBOzs7O0FBS0FBLE9BQVEsWUFBTTtBQUNiOztBQUVBLEtBQUlDLGNBQUo7QUFBQSxLQUFXQyxnQkFBWDtBQUFBLEtBQW9CQyx5QkFBcEI7QUFBQSxLQUNDQyxZQUFZLE9BQU9DLE1BQVAsS0FBa0IsV0FBbEIsSUFBaUNBLE9BQU9DLFFBRHJEO0FBQUEsS0FFQ0MsZUFBZSxDQUFDSCxTQUZqQjtBQUFBLEtBR0NJLE1BQU1KLFlBQVlFLFFBQVosR0FBdUIsSUFIOUI7QUFBQSxLQUlDRyxhQUFhLEVBSmQ7O0FBTUEsVUFBU0MsWUFBVCxDQUFzQkMsU0FBdEIsRUFBaUM7QUFDaEMsTUFBSUMsVUFBSjtBQUNBLE9BQUtBLElBQUksQ0FBVCxFQUFZQSxJQUFJRCxVQUFVRSxNQUExQixFQUFrQ0QsS0FBSyxDQUF2QyxFQUEwQztBQUN6Q0QsYUFBVUMsQ0FBVixFQUFhSixHQUFiO0FBQ0E7QUFDRDs7QUFFRCxVQUFTTSxTQUFULEdBQXFCO0FBQ3BCLE1BQUlILFlBQVlGLFVBQWhCOztBQUVBLE1BQUlGLFlBQUosRUFBa0I7QUFDakI7QUFDQSxPQUFJSSxVQUFVRSxNQUFkLEVBQXNCO0FBQ3JCSixpQkFBYSxFQUFiO0FBQ0FDLGlCQUFhQyxTQUFiO0FBQ0E7QUFDRDtBQUNEOztBQUVEOzs7QUFHQSxVQUFTSSxVQUFULEdBQXNCO0FBQ3JCLE1BQUksQ0FBQ1IsWUFBTCxFQUFtQjtBQUNsQkEsa0JBQWUsSUFBZjtBQUNBLE9BQUlKLGdCQUFKLEVBQXNCO0FBQ3JCYSxrQkFBY2IsZ0JBQWQ7QUFDQTs7QUFFRFc7QUFDQTtBQUNEOztBQUVELEtBQUlWLFNBQUosRUFBZTtBQUNkLE1BQUlFLFNBQVNXLGdCQUFiLEVBQStCO0FBQzlCO0FBQ0E7QUFDQVgsWUFBU1csZ0JBQVQsQ0FBMEIsa0JBQTFCLEVBQThDRixVQUE5QyxFQUEwRCxLQUExRDtBQUNBVixVQUFPWSxnQkFBUCxDQUF3QixNQUF4QixFQUFnQ0YsVUFBaEMsRUFBNEMsS0FBNUM7QUFDQSxHQUxELE1BS08sSUFBSVYsT0FBT2EsV0FBWCxFQUF3QjtBQUM5QmIsVUFBT2EsV0FBUCxDQUFtQixRQUFuQixFQUE2QkgsVUFBN0I7O0FBRUFiLGFBQVVJLFNBQVNhLGFBQVQsQ0FBdUIsS0FBdkIsQ0FBVjtBQUNBLE9BQUk7QUFDSGxCLFlBQVFJLE9BQU9lLFlBQVAsS0FBd0IsSUFBaEM7QUFDQSxJQUZELENBRUUsT0FBT0MsQ0FBUCxFQUFVLENBQUU7O0FBRWQ7QUFDQTtBQUNBO0FBQ0EsT0FBSW5CLFFBQVFvQixRQUFSLElBQW9CckIsS0FBcEIsSUFBNkJJLE9BQU9rQixRQUF4QyxFQUFrRDtBQUNqRHBCLHVCQUFtQnFCLFlBQVksWUFBWTtBQUMxQyxTQUFJO0FBQ0h0QixjQUFRb0IsUUFBUjtBQUNBUDtBQUNBLE1BSEQsQ0FHRSxPQUFPTSxDQUFQLEVBQVUsQ0FBRTtBQUNkLEtBTGtCLEVBS2hCLEVBTGdCLENBQW5CO0FBTUE7QUFDRDs7QUFFRDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsTUFBSWYsU0FBU21CLFVBQVQsS0FBd0IsVUFBNUIsRUFBd0M7QUFDdkNWO0FBQ0E7QUFDRDs7QUFFRDs7QUFFQTs7Ozs7QUFLQSxVQUFTVyxRQUFULENBQWtCQyxRQUFsQixFQUE0QjtBQUMzQixNQUFJcEIsWUFBSixFQUFrQjtBQUNqQm9CLFlBQVNuQixHQUFUO0FBQ0EsR0FGRCxNQUVPO0FBQ05DLGNBQVdtQixJQUFYLENBQWdCRCxRQUFoQjtBQUNBO0FBQ0QsU0FBT0QsUUFBUDtBQUNBOztBQUVEQSxVQUFTRyxPQUFULEdBQW1CLE9BQW5COztBQUVBOzs7QUFHQUgsVUFBU0ksSUFBVCxHQUFnQixVQUFVQyxJQUFWLEVBQWdCQyxHQUFoQixFQUFxQkMsTUFBckIsRUFBNkJDLE1BQTdCLEVBQXFDO0FBQ3BELE1BQUlBLE9BQU9DLE9BQVgsRUFBb0I7QUFDbkJGLFVBQU8sSUFBUDtBQUNBLEdBRkQsTUFFTztBQUNOUCxZQUFTTyxNQUFUO0FBQ0E7QUFDRCxFQU5EOztBQVFBOztBQUVBLFFBQU9QLFFBQVA7QUFDQSxDQXJIRCIsImZpbGUiOiJwbHVnaW5zL2RvbVJlYWR5LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAbGljZW5zZSBSZXF1aXJlSlMgZG9tUmVhZHkgMi4wLjEgQ29weXJpZ2h0IChjKSAyMDEwLTIwMTIsIFRoZSBEb2pvIEZvdW5kYXRpb24gQWxsIFJpZ2h0cyBSZXNlcnZlZC5cbiAqIEF2YWlsYWJsZSB2aWEgdGhlIE1JVCBvciBuZXcgQlNEIGxpY2Vuc2UuXG4gKiBzZWU6IGh0dHA6Ly9naXRodWIuY29tL3JlcXVpcmVqcy9kb21SZWFkeSBmb3IgZGV0YWlsc1xuICovXG4vKmpzbGludCAqL1xuLypnbG9iYWwgcmVxdWlyZTogZmFsc2UsIGRlZmluZTogZmFsc2UsIHJlcXVpcmVqczogZmFsc2UsXG4gIHdpbmRvdzogZmFsc2UsIGNsZWFySW50ZXJ2YWw6IGZhbHNlLCBkb2N1bWVudDogZmFsc2UsXG4gIHNlbGY6IGZhbHNlLCBzZXRJbnRlcnZhbDogZmFsc2UgKi9cblxuXG5kZWZpbmUoICgpID0+IHtcblx0J3VzZSBzdHJpY3QnO1xuXG5cdGxldCBpc1RvcCwgdGVzdERpdiwgc2Nyb2xsSW50ZXJ2YWxJZCxcblx0XHRpc0Jyb3dzZXIgPSB0eXBlb2Ygd2luZG93ICE9PSBcInVuZGVmaW5lZFwiICYmIHdpbmRvdy5kb2N1bWVudCxcblx0XHRpc1BhZ2VMb2FkZWQgPSAhaXNCcm93c2VyLFxuXHRcdGRvYyA9IGlzQnJvd3NlciA/IGRvY3VtZW50IDogbnVsbCxcblx0XHRyZWFkeUNhbGxzID0gW107XG5cblx0ZnVuY3Rpb24gcnVuQ2FsbGJhY2tzKGNhbGxiYWNrcykge1xuXHRcdGxldCBpO1xuXHRcdGZvciAoaSA9IDA7IGkgPCBjYWxsYmFja3MubGVuZ3RoOyBpICs9IDEpIHtcblx0XHRcdGNhbGxiYWNrc1tpXShkb2MpO1xuXHRcdH1cblx0fVxuXG5cdGZ1bmN0aW9uIGNhbGxSZWFkeSgpIHtcblx0XHRsZXQgY2FsbGJhY2tzID0gcmVhZHlDYWxscztcblxuXHRcdGlmIChpc1BhZ2VMb2FkZWQpIHtcblx0XHRcdC8vQ2FsbCB0aGUgRE9NIHJlYWR5IGNhbGxiYWNrc1xuXHRcdFx0aWYgKGNhbGxiYWNrcy5sZW5ndGgpIHtcblx0XHRcdFx0cmVhZHlDYWxscyA9IFtdO1xuXHRcdFx0XHRydW5DYWxsYmFja3MoY2FsbGJhY2tzKTtcblx0XHRcdH1cblx0XHR9XG5cdH1cblxuXHQvKipcblx0ICogU2V0cyB0aGUgcGFnZSBhcyBsb2FkZWQuXG5cdCAqL1xuXHRmdW5jdGlvbiBwYWdlTG9hZGVkKCkge1xuXHRcdGlmICghaXNQYWdlTG9hZGVkKSB7XG5cdFx0XHRpc1BhZ2VMb2FkZWQgPSB0cnVlO1xuXHRcdFx0aWYgKHNjcm9sbEludGVydmFsSWQpIHtcblx0XHRcdFx0Y2xlYXJJbnRlcnZhbChzY3JvbGxJbnRlcnZhbElkKTtcblx0XHRcdH1cblxuXHRcdFx0Y2FsbFJlYWR5KCk7XG5cdFx0fVxuXHR9XG5cblx0aWYgKGlzQnJvd3Nlcikge1xuXHRcdGlmIChkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKSB7XG5cdFx0XHQvL1N0YW5kYXJkcy4gSG9vcmF5ISBBc3N1bXB0aW9uIGhlcmUgdGhhdCBpZiBzdGFuZGFyZHMgYmFzZWQsXG5cdFx0XHQvL2l0IGtub3dzIGFib3V0IERPTUNvbnRlbnRMb2FkZWQuXG5cdFx0XHRkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKFwiRE9NQ29udGVudExvYWRlZFwiLCBwYWdlTG9hZGVkLCBmYWxzZSk7XG5cdFx0XHR3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcihcImxvYWRcIiwgcGFnZUxvYWRlZCwgZmFsc2UpO1xuXHRcdH0gZWxzZSBpZiAod2luZG93LmF0dGFjaEV2ZW50KSB7XG5cdFx0XHR3aW5kb3cuYXR0YWNoRXZlbnQoXCJvbmxvYWRcIiwgcGFnZUxvYWRlZCk7XG5cblx0XHRcdHRlc3REaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcblx0XHRcdHRyeSB7XG5cdFx0XHRcdGlzVG9wID0gd2luZG93LmZyYW1lRWxlbWVudCA9PT0gbnVsbDtcblx0XHRcdH0gY2F0Y2ggKGUpIHt9XG5cblx0XHRcdC8vRE9NQ29udGVudExvYWRlZCBhcHByb3hpbWF0aW9uIHRoYXQgdXNlcyBhIGRvU2Nyb2xsLCBhcyBmb3VuZCBieVxuXHRcdFx0Ly9EaWVnbyBQZXJpbmk6IGh0dHA6Ly9qYXZhc2NyaXB0Lm53Ym94LmNvbS9JRUNvbnRlbnRMb2FkZWQvLFxuXHRcdFx0Ly9idXQgbW9kaWZpZWQgYnkgb3RoZXIgY29udHJpYnV0b3JzLCBpbmNsdWRpbmcgamRhbHRvblxuXHRcdFx0aWYgKHRlc3REaXYuZG9TY3JvbGwgJiYgaXNUb3AgJiYgd2luZG93LmV4dGVybmFsKSB7XG5cdFx0XHRcdHNjcm9sbEludGVydmFsSWQgPSBzZXRJbnRlcnZhbChmdW5jdGlvbiAoKSB7XG5cdFx0XHRcdFx0dHJ5IHtcblx0XHRcdFx0XHRcdHRlc3REaXYuZG9TY3JvbGwoKTtcblx0XHRcdFx0XHRcdHBhZ2VMb2FkZWQoKTtcblx0XHRcdFx0XHR9IGNhdGNoIChlKSB7fVxuXHRcdFx0XHR9LCAzMCk7XG5cdFx0XHR9XG5cdFx0fVxuXG5cdFx0Ly9DaGVjayBpZiBkb2N1bWVudCBhbHJlYWR5IGNvbXBsZXRlLCBhbmQgaWYgc28sIGp1c3QgdHJpZ2dlciBwYWdlIGxvYWRcblx0XHQvL2xpc3RlbmVycy4gTGF0ZXN0IHdlYmtpdCBicm93c2VycyBhbHNvIHVzZSBcImludGVyYWN0aXZlXCIsIGFuZFxuXHRcdC8vd2lsbCBmaXJlIHRoZSBvbkRPTUNvbnRlbnRMb2FkZWQgYmVmb3JlIFwiaW50ZXJhY3RpdmVcIiBidXQgbm90IGFmdGVyXG5cdFx0Ly9lbnRlcmluZyBcImludGVyYWN0aXZlXCIgb3IgXCJjb21wbGV0ZVwiLiBNb3JlIGRldGFpbHM6XG5cdFx0Ly9odHRwOi8vZGV2LnczLm9yZy9odG1sNS9zcGVjL3RoZS1lbmQuaHRtbCN0aGUtZW5kXG5cdFx0Ly9odHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzM2NjU1NjEvZG9jdW1lbnQtcmVhZHlzdGF0ZS1vZi1pbnRlcmFjdGl2ZS12cy1vbmRvbWNvbnRlbnRsb2FkZWRcblx0XHQvL0htbSwgdGhpcyBpcyBtb3JlIGNvbXBsaWNhdGVkIG9uIGZ1cnRoZXIgdXNlLCBzZWUgXCJmaXJpbmcgdG9vIGVhcmx5XCJcblx0XHQvL2J1ZzogaHR0cHM6Ly9naXRodWIuY29tL3JlcXVpcmVqcy9kb21SZWFkeS9pc3N1ZXMvMVxuXHRcdC8vc28gcmVtb3ZpbmcgdGhlIHx8IGRvY3VtZW50LnJlYWR5U3RhdGUgPT09IFwiaW50ZXJhY3RpdmVcIiB0ZXN0LlxuXHRcdC8vVGhlcmUgaXMgc3RpbGwgYSB3aW5kb3cub25sb2FkIGJpbmRpbmcgdGhhdCBzaG91bGQgZ2V0IGZpcmVkIGlmXG5cdFx0Ly9ET01Db250ZW50TG9hZGVkIGlzIG1pc3NlZC5cblx0XHRpZiAoZG9jdW1lbnQucmVhZHlTdGF0ZSA9PT0gXCJjb21wbGV0ZVwiKSB7XG5cdFx0XHRwYWdlTG9hZGVkKCk7XG5cdFx0fVxuXHR9XG5cblx0LyoqIFNUQVJUIE9GIFBVQkxJQyBBUEkgKiovXG5cblx0LyoqXG5cdCAqIFJlZ2lzdGVycyBhIGNhbGxiYWNrIGZvciBET00gcmVhZHkuIElmIERPTSBpcyBhbHJlYWR5IHJlYWR5LCB0aGVcblx0ICogY2FsbGJhY2sgaXMgY2FsbGVkIGltbWVkaWF0ZWx5LlxuXHQgKiBAcGFyYW0ge0Z1bmN0aW9ufSBjYWxsYmFja1xuXHQgKi9cblx0ZnVuY3Rpb24gZG9tUmVhZHkoY2FsbGJhY2spIHtcblx0XHRpZiAoaXNQYWdlTG9hZGVkKSB7XG5cdFx0XHRjYWxsYmFjayhkb2MpO1xuXHRcdH0gZWxzZSB7XG5cdFx0XHRyZWFkeUNhbGxzLnB1c2goY2FsbGJhY2spO1xuXHRcdH1cblx0XHRyZXR1cm4gZG9tUmVhZHk7XG5cdH1cblxuXHRkb21SZWFkeS52ZXJzaW9uID0gJzIuMC4xJztcblxuXHQvKipcblx0ICogTG9hZGVyIFBsdWdpbiBBUEkgbWV0aG9kXG5cdCAqL1xuXHRkb21SZWFkeS5sb2FkID0gZnVuY3Rpb24gKG5hbWUsIHJlcSwgb25Mb2FkLCBjb25maWcpIHtcblx0XHRpZiAoY29uZmlnLmlzQnVpbGQpIHtcblx0XHRcdG9uTG9hZChudWxsKTtcblx0XHR9IGVsc2Uge1xuXHRcdFx0ZG9tUmVhZHkob25Mb2FkKTtcblx0XHR9XG5cdH07XG5cblx0LyoqIEVORCBPRiBQVUJMSUMgQVBJICoqL1xuXG5cdHJldHVybiBkb21SZWFkeTtcbn0pO1xuIl19

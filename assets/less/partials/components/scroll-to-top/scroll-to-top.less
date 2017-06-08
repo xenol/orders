@@ -1,0 +1,20 @@
+// Scroll To Top Button
+// --------------------------------------
+a#scroll-to-top {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	border-radius: 5px;
+	padding: 9px 10px 10px 10px;
+	text-align: center;
+	line-height: 100%;
+	opacity: 0.9;
+	z-index: 9999;
+	background: fade(@black, 30%);
+	display: none;
+	.a-colors(@white);
+	
+	&.show {
+		display: block;
+	}
+}

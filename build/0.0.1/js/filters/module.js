@@ -1,0 +1,1 @@
+"use strict";define("filters/module",["angular"],function(e){return e.module("app.filters",[])});

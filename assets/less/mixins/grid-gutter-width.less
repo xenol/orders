@@ -1,0 +1,35 @@
+// all grid-gutter-width
+
+.grid-gutter-width( @var: margin, @divider: 1 ) {
+	
+	@media (max-width: @screen-xs-max){
+		@{var}: @grid-gutter-width-xs/@divider;
+	}
+	
+	@media (min-width: @screen-sm-min){
+		@{var}: @grid-gutter-width-sm/@divider;
+	}
+	
+	@media (min-width: @screen-md-min){
+		@{var}: @grid-gutter-width/@divider;
+	}
+	
+	@{var}: @grid-gutter-width/@divider;
+}
+
+.grid-gutter-width-minus( @var: margin, @divider: 1 ) {
+	
+	@media (max-width: @screen-xs-max){
+		@{var}: -@grid-gutter-width-xs/@divider;
+	}
+	
+	@media (min-width: @screen-sm-min){
+		@{var}: -@grid-gutter-width-sm/@divider;
+	}
+	
+	@media (min-width: @screen-md-min){
+		@{var}: -@grid-gutter-width/@divider;
+	}
+	
+	@{var}: -@grid-gutter-width/@divider;
+}

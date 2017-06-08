@@ -1,0 +1,115 @@
+// Special colors for social networks
+// ======================================
+
+// Social networks color kit
+// --------------------------------------
+@social-pinterest:    #cb2028;
+@social-linkedin:     #0072b5;
+@social-stumbleupon:  #ed4a13;
+@social-googleplus:   #3f85f4;
+@social-facebook:     #2f4b93;
+@social-twitter:      #00bdef;
+@social-vk:           #36638e;
+@social-mailru:       #014b88;
+@pinterest:           @social-pinterest;
+@linkedin:            @social-linkedin;
+@stumbleupon:         @social-stumbleupon;
+@googleplus:          @social-googleplus;
+@facebook:            @social-facebook;
+@twitter:             @social-twitter;
+@vk:                  @social-vk;
+@mailru:              @social-mailru;
+
+
+
+// Set social colors
+// --------------------------------------
+.set-social( @suffix: pinterest ){
+	@tmp: "social-@{suffix}";
+	@color: @@tmp;
+}
+
+// Get social colors
+// --------------------------------------
+.social(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	color: @color @rest;
+}
+.social-xs(@suffix, @rest...)
+{
+	.set-social( @suffix );
+	.xs( color, @color, @rest);
+}
+.social-sm(@suffix, @rest...)
+{
+	.set-social( @suffix );
+	.sm( color, @color, @rest);
+}
+.social-md(@suffix, @rest...)
+{
+	.set-social( @suffix );
+	.md( color, @color, @rest);
+}
+.social-lg(@suffix, @rest...)
+{
+	.set-social( @suffix );
+	.lg( color, @color, @rest);
+}
+
+
+// Get social background-colors
+// --------------------------------------
+.bg-social(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	background-color: @color @rest;
+}
+.bg-social-xs(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.xs( background-color, @color, @rest);
+}
+.bg-social-sm(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.sm( background-color, @color, @rest);
+}
+.bg-social-md(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.md( background-color, @color, @rest);
+}
+.bg-social-lg(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.lg( background-color, @color, @rest);
+}
+
+// Get social border-colors
+// --------------------------------------
+.border-social(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	border-color: @color @rest;
+}
+.border-social-xs(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.xs( border-color, @color, @rest);
+}
+.border-social-sm(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.sm( border-color, @color, @rest);
+}
+.border-social-md(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.md( border-color, @color, @rest);
+}
+.border-social-lg(@suffix, @rest...)
+{
+	.set-social(@suffix);
+	.lg( border-color, @color, @rest);
+}

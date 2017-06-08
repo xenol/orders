@@ -1,0 +1,22 @@
+// Rouble icon class
+// ======================================
+// @dependencies: mixin/fonts
+
+.rub,
+.rouble
+{
+	white-space: nowrap;
+	
+	&::after
+	{
+		position: relative;
+		.font-type(fontawesome);
+		content: "\f158";
+		right: -5px;
+		padding-right: 5px;
+		font-size: 90%;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}

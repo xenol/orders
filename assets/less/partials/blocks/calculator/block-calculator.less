@@ -1,0 +1,139 @@
+.block-calculator {
+	margin-bottom: 20px;
+}
+
+.block-calculator__total {
+	margin-bottom: 30px;
+}
+
+// @see: themes/orders/mixins/colors/orders-mixins
+.block-calculator__panel {
+	background-color: @orders-light-green;
+	margin-bottom: 40px;
+	padding: 5px 0;
+	
+	@media screen and (max-width: @screen-xs-max) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.block-calculator__price {
+	padding-right: 40px;
+	
+	@media screen and (max-width: @screen-xs-max) {
+		padding-right: 10px;
+	}
+}
+
+.block-calculator__inc,
+.block-calculator__dec {
+	.button-variant( @link-color; transparent; @link-color );
+	.square(30px);
+	position: relative;
+	
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		background-color: @link-color;
+		top: 50%;
+		left: 50%;
+		transform: translate3D(-50%, -50%, 0);
+	}
+	
+	&:hover,
+	&:focus {
+		border-color: @link-hover-color;
+	}
+}
+
+.block-calculator__inc {
+	&::before {
+		width: 14px;
+		height: 2px;
+	}
+	
+	&::after {
+		width: 2px;
+		height: 14px;
+	}
+}
+
+.block-calculator__dec::before {
+	width: 14px;
+	height: 2px;
+}
+
+.block-calculator__inc:hover,
+.block-calculator__inc:focus,
+.block-calculator__dec:hover,
+.block-calculator__dec:focus {
+	&::before,
+	&::after {
+		background-color: @link-hover-color;
+	}
+}
+
+.block-calculator__arrow {
+	position: relative;
+	top: 2px;
+}
+
+/*
+ * Date form-inline
+ */
+.block-calculator__date {
+	margin-bottom: 40px;
+}
+ 
+.block-calculator__input {
+	box-shadow: none;
+	border-right-width: 0 !important;
+	font-size: @font-size-base !important;
+	padding: @padding-large-vertical @padding-large-horizontal !important;
+	
+	@media screen and (min-width: @screen-sm-min) {
+		width: 140px !important;
+	}
+}
+
+.block-calculator__input[readonly] {
+	background-color: inherit;
+}
+
+.block-calculator__input-addon {
+	width: 50px !important;
+	box-shadow: none !important;
+	
+	&:hover {
+		background-color: @dropdown-link-hover-bg;
+	}
+}
+
+.block-calculator__date-form .input-group {
+	@media screen and (max-width: @screen-xs-max) {
+		width: 100%;
+	}
+}
+
+.block-calculator__date-form.form-inline > .form-group {
+	@media screen and (min-width: @screen-sm-min) {
+		float: left;
+	}
+}
+
+.block-calculator__date-form.form-inline > .form-group + .form-group {
+	@media screen and (min-width: @screen-sm-min) {
+		margin-left: 10px;
+	}
+}
+
+.block-calculator__form-group.form-group-lg.loading,
+.block-calculator__form-group.form-group-lg.loading-pulse {
+	height: @input-height-large;
+	
+	@media screen and (min-width: @screen-sm-min) {
+		width: 115px;
+	}
+}

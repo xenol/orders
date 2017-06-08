@@ -1,0 +1,11 @@
+extends /partials/sections/main/section-main
+
+append section-main-args
+	- sectionMain["data-ng-controller"] = "MainCtrl";
+	- sectionMainTitle["data-ng-bind"] = "title";
+	- sectionMainTitleHTML = "";
+	- sectionMainDescription["data-ng-bind"] = "description";
+	- sectionMainDescriptionHTML = "";
+
+block section-main-before
+	breadcrumbs

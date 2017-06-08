@@ -1,0 +1,111 @@
+//- Alert mixin
+//--------------------------------------
+mixin alert( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "alert-default";
+		- defaults.role = "alert";
+	
+	.alert&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Dismissible mixin
+//--------------------------------------
+mixin alertDismissible( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alert()(class= "alert-dismissible")&attributes( jsonMerge(attributes, defaults) )
+		+buttonDismissible()
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Dismissible mixin alias
+//--------------------------------------
+mixin alertDismiss( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alertDismissible()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Default mixin
+//--------------------------------------
+mixin alertDefault( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alert()(class= "alert-default")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Success mixin
+//--------------------------------------
+mixin alertSuccess( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alert()(class= "alert-success")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Info mixin
+//--------------------------------------
+mixin alertInfo( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alert()(class= "alert-info")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Warning mixin
+//--------------------------------------
+mixin alertWarning( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alert()(class= "alert-warning")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+	
+//- Alert Danger mixin
+//--------------------------------------
+mixin alertDanger( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+alert()(class= "alert-danger")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+			
+			
+//--------------------------------------
+//- Alert Link mixins
+//--------------------------------------
+mixin alertLink( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+a()(class= "alert-link")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(20)}

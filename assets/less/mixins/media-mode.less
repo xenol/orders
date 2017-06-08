@@ -1,0 +1,75 @@
+// Get property with mode
+// --------------------------------------
+.xs( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (max-width: @screen-xs-max)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.xs-max( @prop: color, @value: @brand-primary, @rest... )
+{
+	.xs( @prop, @value, @rest)
+}
+
+.sm( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.sm-min( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (min-width: @screen-sm-min)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.sm-max( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (max-width: @screen-sm-max)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.md( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.md-min( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (min-width: @screen-md-min)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.md-max( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (max-width: @screen-md-max)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.lg( @prop: color, @value: @brand-primary, @rest... )
+{
+	@media screen and (min-width: @screen-lg-min)
+	{
+		@{prop}: @value @rest;
+	}
+}
+
+.lg-min( @prop: color, @value: @brand-primary, @rest... )
+{
+	.lg( @prop, @value, @rest)
+}

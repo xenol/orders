@@ -1,0 +1,1 @@
+"use strict";define("filters/module",["angular"],function(e){return e.module("app.filters",[])}),define("filters/escAttr",["./module","underscore"],function(e,r){return e.filter("escAttr",[function(){return function(e){return r.escape(String(e))}}])});

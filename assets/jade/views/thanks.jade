@@ -1,0 +1,14 @@
+extends /partials/sections/main/section-main-ng
+
+append section-main-args
+	- sectionMain["data-ng-controller"] = "CartCtrl";
+	- sectionMainTitle.class = "text-center";
+	
+prepend section-main-title
+	span( data-ng-if="quantity()" )
+		include /partials/blocks/icon/block-icon-check
+	
+block section-main-before
+block section-main-content
+	.text-center.p-t-15.m-b-20
+		a.bold( href="#!/" data-ng-click="clear()" ) Мои заказы

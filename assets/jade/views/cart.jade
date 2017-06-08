@@ -1,0 +1,9 @@
+extends /partials/sections/main/section-main-ng
+
+append section-main-args
+	- sectionMain["data-ng-controller"] = "CartCtrl";
+	- sectionMainDescription = {};
+
+block section-main-content
+	include /partials/blocks/services/block-services-cart-ng
+	include /partials/blocks/calculator/block-calculator-cart-ng

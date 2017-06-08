@@ -1,0 +1,8 @@
+'use strict';
+
+define(['angular'], function (ng) {
+	'use strict';
+
+	return ng.module('app.services', []);
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2VzL21vZHVsZS5qcyJdLCJuYW1lcyI6WyJkZWZpbmUiLCJuZyIsIm1vZHVsZSJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsT0FBTyxDQUFDLFNBQUQsQ0FBUCxFQUFvQixVQUFVQyxFQUFWLEVBQWM7QUFDakM7O0FBQ0EsUUFBT0EsR0FBR0MsTUFBSCxDQUFVLGNBQVYsRUFBMEIsRUFBMUIsQ0FBUDtBQUNBLENBSEQiLCJmaWxlIjoic2VydmljZXMvbW9kdWxlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZGVmaW5lKFsnYW5ndWxhciddLCBmdW5jdGlvbiAobmcpIHtcblx0J3VzZSBzdHJpY3QnO1xuXHRyZXR1cm4gbmcubW9kdWxlKCdhcHAuc2VydmljZXMnLCBbXSk7XG59KTtcbiJdfQ==

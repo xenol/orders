@@ -1,0 +1,22 @@
+extends block-services
+
+block services-items
+	.block-services__item
+		.row
+			.col-xs-12.col-sm-7
+				a.block-services__a( href="#" title="" ) Регулировка фурнитуры оконных и дверных блоков
+				
+			.col-xs-10.col-sm-4.block-services__price.text-right.p-r-20 500 &#8381;
+			.col-xs-2.col-sm-1.block-services__cart: a.text( href="#" title=""): i.icon-trash
+				
+	.block-services__item
+		.row
+			.col-xs-12.col-sm-7
+				a.block-services__a( href="#" title="" ) Замена уплотнителя в окнах и дверях, за одну створку
+				
+			.col-xs-10.col-sm-4.block-services__price.text-right.p-r-20 400 &#8381;
+			.col-xs-2.col-sm-1.block-services__cart: a.text( href="#" title=""): i.icon-trash
+			
+block services-items-after
+	.block-services__addnew.cb
+		a( href="#" title="" ) + Добавить еще одну услугу

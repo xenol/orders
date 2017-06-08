@@ -1,0 +1,9 @@
+//- Thumbnail mixin
+//--------------------------------------
+mixin thumbnail( tag )
+	#{tag ? tag: "div"}( class="thumbnail" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+a(): +img()
+			.caption #{loremIpsum(100)}

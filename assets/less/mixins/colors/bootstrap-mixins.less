@@ -1,0 +1,1305 @@
+// Basic colors
+// ======================================
+
+// brand colors (deps: variables/bootstrap.less)
+// -------------------
+// @brand-primary
+// @brand-success
+// @brand-info
+// @brand-warning
+// @brand-danger
+// 
+// state colors
+// -------------------
+// @state-success-text
+// @state-info-text
+// @state-warning-text
+// @state-danger-text
+//
+// @state-success-bg
+// @state-info-bg
+// @state-warning-bg
+// @state-danger-bg
+//
+// @state-success-border
+// @state-info-border
+// @state-warning-border
+// @state-danger-border
+//
+// gray colors
+// -------------------
+// @gray-base
+// @gray-darker
+// @gray-dark
+// @gray
+// @gray-light
+// @gray-lighter
+//
+// Additional colors
+// -------------------
+// @text-color
+// @body-color
+
+@white: #fff;
+@black: #000;
+
+
+
+// Set colors
+// ======================================
+
+// Set brand colors
+// --------------------------------------
+.set-brand( @brand ) when ( isstring(@brand) ){
+	@tmp: "brand-@{brand}";
+	@color: @@tmp;
+}
+.set-brand(){
+	.set-brand( "primary" );
+}
+
+
+// Set state text colors
+// --------------------------------------
+.set-text-state( @state ) when ( isstring(@state) ){
+	@tmp: "state-@{state}-text";
+	@color: @@tmp;
+	test: @state-success-text;
+}
+.set-text-state() when ( default() ){
+	.set-text-state( "success" );
+}
+
+
+// Set state background colors
+// --------------------------------------
+.set-bg-state( @state ) when ( isstring(@state) ){
+	@tmp: "state-@{state}-bg";
+	@color: @@tmp;
+}
+.set-bg-state(){
+	.set-bg-state( "success" );
+}
+
+
+// Set state border colors
+// --------------------------------------
+.set-border-state( @state ) when ( isstring(@state) ){
+	@tmp: "state-@{state}-border";
+	@color: @@tmp;
+}
+.set-border-state(){
+	.set-border-state( "success" );
+}
+
+
+// Set gray colors
+// --------------------------------------
+.set-gray( @suffix ) when ( isstring(@suffix) ){
+	@tmp: "gray-@{suffix}";
+	@color: @@tmp;
+}
+.set-gray(){
+	@color: @gray;
+}
+
+
+// Set additional colors
+// --------------------------------------
+.set-text(){
+	@color: @text-color;
+}
+
+.set-body(){
+	@color: @body-bg;
+}
+
+.set-white(){
+	@color: @white;
+}
+
+
+// Get colors
+// ======================================
+
+// Brand colors
+// --------------------------------------
+
+// ** primary
+
+.primary(...){
+	.set-brand( "primary" );
+	color: @color @arguments;
+}
+.primary-xs(...){
+	.set-brand( "primary" );
+	.xs( color, @color, @arguments );
+}
+.primary-sm(...){
+	.set-brand( "primary" );
+	.sm( color, @color, @arguments );
+}
+.primary-md(...){
+	.set-brand( "primary" );
+	.md( color, @color, @arguments );
+}
+.primary-lg(...){
+	.set-brand( "primary" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-primary(...){
+	.set-brand( "primary" );
+	background-color: @color @arguments;
+}
+.bg-primary-xs(...){
+	.set-brand( "primary" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-primary-sm(...){
+	.set-brand( "primary" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-primary-md(...){
+	.set-brand( "primary" );
+	.md( background-color, @color, @arguments );
+}
+.bg-primary-lg(...){
+	.set-brand( "primary" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-primary(...){
+	.set-brand( "primary" );
+	border-color: @color @arguments;
+}
+.border-primary-xs(...){
+	.set-brand( "primary" );
+	.xs( border-color, @color, @arguments );
+}
+.border-primary-sm(...){
+	.set-brand( "primary" );
+	.sm( border-color, @color, @arguments );
+}
+.border-primary-md(...){
+	.set-brand( "primary" );
+	.md( border-color, @color, @arguments );
+}
+.border-primary-lg(...){
+	.set-brand( "primary" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** success
+
+.success(...){
+	.set-brand( "success" );
+	color: @color @arguments;
+}
+.success-xs(...){
+	.set-brand( "success" );
+	.xs( color, @color, @arguments );
+}
+.success-sm(...){
+	.set-brand( "success" );
+	.sm( color, @color, @arguments );
+}
+.success-md(...){
+	.set-brand( "success" );
+	.md( color, @color, @arguments );
+}
+.success-lg(...){
+	.set-brand( "success" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-success(...){
+	.set-brand( "success" );
+	background-color: @color @arguments;
+}
+.bg-success-xs(...){
+	.set-brand( "success" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-success-sm(...){
+	.set-brand( "success" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-success-md(...){
+	.set-brand( "success" );
+	.md( background-color, @color, @arguments );
+}
+.bg-success-lg(...){
+	.set-brand( "success" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-success(...){
+	.set-brand( "success" );
+	border-color: @color @arguments;
+}
+.border-success-xs(...){
+	.set-brand( "success" );
+	.xs( border-color, @color, @arguments );
+}
+.border-success-sm(...){
+	.set-brand( "success" );
+	.sm( border-color, @color, @arguments );
+}
+.border-success-md(...){
+	.set-brand( "success" );
+	.md( border-color, @color, @arguments );
+}
+.border-success-lg(...){
+	.set-brand( "success" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** info
+
+.info(...){
+	.set-brand( "info" );
+	color: @color @arguments;
+}
+.info-xs(...){
+	.set-brand( "info" );
+	.xs( color, @color, @arguments );
+}
+.info-sm(...){
+	.set-brand( "info" );
+	.sm( color, @color, @arguments );
+}
+.info-md(...){
+	.set-brand( "info" );
+	.md( color, @color, @arguments );
+}
+.info-lg(...){
+	.set-brand( "info" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-info(...){
+	.set-brand( "info" );
+	background-color: @color @arguments;
+}
+.bg-info-xs(...){
+	.set-brand( "info" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-info-sm(...){
+	.set-brand( "info" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-info-md(...){
+	.set-brand( "info" );
+	.md( background-color, @color, @arguments );
+}
+.bg-info-lg(...){
+	.set-brand( "info" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-info(...){
+	.set-brand( "info" );
+	border-color: @color @arguments;
+}
+.border-info-xs(...){
+	.set-brand( "info" );
+	.xs( border-color, @color, @arguments );
+}
+.border-info-sm(...){
+	.set-brand( "info" );
+	.sm( border-color, @color, @arguments );
+}
+.border-info-md(...){
+	.set-brand( "info" );
+	.md( border-color, @color, @arguments );
+}
+.border-info-lg(...){
+	.set-brand( "info" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** warning
+
+.warning(...){
+	.set-brand( "warning" );
+	color: @color @arguments;
+}
+.warning-xs(...){
+	.set-brand( "warning" );
+	.xs( color, @color, @arguments );
+}
+.warning-sm(...){
+	.set-brand( "warning" );
+	.sm( color, @color, @arguments );
+}
+.warning-md(...){
+	.set-brand( "warning" );
+	.md( color, @color, @arguments );
+}
+.warning-lg(...){
+	.set-brand( "warning" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-warning(...){
+	.set-brand( "warning" );
+	background-color: @color @arguments;
+}
+.bg-warning-xs(...){
+	.set-brand( "warning" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-warning-sm(...){
+	.set-brand( "warning" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-warning-md(...){
+	.set-brand( "warning" );
+	.md( background-color, @color, @arguments );
+}
+.bg-warning-lg(...){
+	.set-brand( "warning" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-warning(...){
+	.set-brand( "warning" );
+	border-color: @color @arguments;
+}
+.border-warning-xs(...){
+	.set-brand( "warning" );
+	.xs( border-color, @color, @arguments );
+}
+.border-warning-sm(...){
+	.set-brand( "warning" );
+	.sm( border-color, @color, @arguments );
+}
+.border-warning-md(...){
+	.set-brand( "warning" );
+	.md( border-color, @color, @arguments );
+}
+.border-warning-lg(...){
+	.set-brand( "warning" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** danger
+
+.danger(...){
+	.set-brand( "danger" );
+	color: @color @arguments;
+}
+.danger-xs(...){
+	.set-brand( "danger" );
+	.xs( color, @color, @arguments );
+}
+.danger-sm(...){
+	.set-brand( "danger" );
+	.sm( color, @color, @arguments );
+}
+.danger-md(...){
+	.set-brand( "danger" );
+	.md( color, @color, @arguments );
+}
+.danger-lg(...){
+	.set-brand( "danger" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-danger(...){
+	.set-brand( "danger" );
+	background-color: @color @arguments;
+}
+.bg-danger-xs(...){
+	.set-brand( "danger" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-danger-sm(...){
+	.set-brand( "danger" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-danger-md(...){
+	.set-brand( "danger" );
+	.md( background-color, @color, @arguments );
+}
+.bg-danger-lg(...){
+	.set-brand( "danger" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-danger(...){
+	.set-brand( "danger" );
+	border-color: @color @arguments;
+}
+.border-danger-xs(...){
+	.set-brand( "danger" );
+	.xs( border-color, @color, @arguments );
+}
+.border-danger-sm(...){
+	.set-brand( "danger" );
+	.sm( border-color, @color, @arguments );
+}
+.border-danger-md(...){
+	.set-brand( "danger" );
+	.md( border-color, @color, @arguments );
+}
+.border-danger-lg(...){
+	.set-brand( "danger" );
+	.lg( border-color, @color, @arguments );
+}
+
+// State colors
+// --------------------------------------
+
+// ** state success
+
+.state-success(...){
+	.set-text-state( "success" );
+	color: @color @arguments;
+}
+.state-success-xs(...){
+	.set-text-state( "success" );
+	.xs( color, @color, @arguments );
+}
+.state-success-sm(...){
+	.set-text-state( "success" );
+	.sm( color, @color, @arguments );
+}
+.state-success-md(...){
+	.set-text-state( "success" );
+	.md( color, @color, @arguments );
+}
+.state-success-lg(...){
+	.set-text-state( "success" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-state-success(...){
+	.set-bg-state( "success" );
+	background-color: @color @arguments;
+}
+.bg-state-success-xs(...){
+	.set-bg-state( "success" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-state-success-sm(...){
+	.set-bg-state( "success" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-state-success-md(...){
+	.set-bg-state( "success" );
+	.md( background-color, @color, @arguments );
+}
+.bg-state-success-lg(...){
+	.set-bg-state( "success" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-state-success(...){
+	.set-border-state( "success" );
+	border-color: @color @arguments;
+}
+.border-state-success-xs(...){
+	.set-border-state( "success" );
+	.xs( border-color, @color, @arguments );
+}
+.border-state-success-sm(...){
+	.set-border-state( "success" );
+	.sm( border-color, @color, @arguments );
+}
+.border-state-success-md(...){
+	.set-border-state( "success" );
+	.md( border-color, @color, @arguments );
+}
+.border-state-success-lg(...){
+	.set-border-state( "success" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** state info
+
+.state-info(...){
+	.set-text-state( "info" );
+	color: @color @arguments;
+}
+.state-info-xs(...){
+	.set-text-state( "info" );
+	.xs( color, @color, @arguments);
+}
+.state-info-sm(...){
+	.set-text-state( "info" );
+	.sm( color, @color, @arguments);
+}
+.state-info-md(...){
+	.set-text-state( "info" );
+	.md( color, @color, @arguments);
+}
+.state-info-lg(...){
+	.set-text-state( "info" );
+	.lg( color, @color, @arguments);
+}
+
+.bg-state-info(...){
+	.set-bg-state( "info" );
+	background-color: @color @arguments;
+}
+.bg-state-info-xs(...){
+	.set-bg-state( "info" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-state-info-sm(...){
+	.set-bg-state( "info" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-state-info-md(...){
+	.set-bg-state( "info" );
+	.md( background-color, @color, @arguments );
+}
+.bg-state-info-lg(...){
+	.set-bg-state( "info" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-state-info(...){
+	.set-border-state( "info" );
+	border-color: @color @arguments;
+}
+.border-state-info-xs(...){
+	.set-border-state( "info" );
+	.xs( border-color, @color, @arguments );
+}
+.border-state-info-sm(...){
+	.set-border-state( "info" );
+	.sm( border-color, @color, @arguments );
+}
+.border-state-info-md(...){
+	.set-border-state( "info" );
+	.md( border-color, @color, @arguments );
+}
+.border-state-info-lg(...){
+	.set-border-state( "info" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** state warning
+
+.state-warning(...){
+	.set-text-state( "warning" );
+	color: @color @arguments;
+}
+.state-warning-xs(...){
+	.set-text-state( "warning" );
+	.xs( color, @color, @arguments );
+}
+.state-warning-sm(...){
+	.set-text-state( "warning" );
+	.sm( color, @color, @arguments );
+}
+.state-warning-md(...){
+	.set-text-state( "warning" );
+	.md( color, @color, @arguments );
+}
+.state-warning-lg(...){
+	.set-text-state( "warning" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-state-warning(...){
+	.set-bg-state( "warning" );
+	background-color: @color @arguments;
+}
+.bg-state-warning-xs(...){
+	.set-bg-state( "warning" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-state-warning-sm(...){
+	.set-bg-state( "warning" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-state-warning-md(...){
+	.set-bg-state( "warning" );
+	.md( background-color, @color, @arguments );
+}
+.bg-state-warning-lg(...){
+	.set-bg-state( "warning" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-state-warning(...){
+	.set-border-state( "warning" );
+	border-color: @color @arguments;
+}
+.border-state-warning-xs(...){
+	.set-border-state( "warning" );
+	.xs( border-color, @color, @arguments );
+}
+.border-state-warning-sm(...){
+	.set-border-state( "warning" );
+	.sm( border-color, @color, @arguments );
+}
+.border-state-warning-md(...){
+	.set-border-state( "warning" );
+	.md( border-color, @color, @arguments );
+}
+.border-state-warning-lg(...){
+	.set-border-state( "warning" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** state danger
+
+.state-danger(...){
+	.set-text-state( "danger" );
+	color: @color @arguments;
+}
+.state-danger-xs(...){
+	.set-text-state( "danger" );
+	.xs( color, @color, @arguments );
+}
+.state-danger-sm(...){
+	.set-text-state( "danger" );
+	.sm( color, @color, @arguments );
+}
+.state-danger-md(...){
+	.set-text-state( "danger" );
+	.md( color, @color, @arguments );
+}
+.state-danger-lg(...){
+	.set-text-state( "danger" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-state-danger(...){
+	.set-bg-state( "danger" );
+	background-color: @color @arguments;
+}
+.bg-state-danger-xs(...){
+	.set-bg-state( "danger" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-state-danger-sm(...){
+	.set-bg-state( "danger" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-state-danger-md(...){
+	.set-bg-state( "danger" );
+	.md( background-color, @color, @arguments );
+}
+.bg-state-danger-lg(...){
+	.set-bg-state( "danger" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-state-danger(...){
+	.set-border-state( "danger" );
+	border-color: @color @arguments;
+}
+.border-state-danger-xs(...){
+	.set-border-state( "danger" );
+	.xs( border-color, @color, @arguments );
+}
+.border-state-danger-sm(...){
+	.set-border-state( "danger" );
+	.sm( border-color, @color, @arguments );
+}
+.border-state-danger-md(...){
+	.set-border-state( "danger" );
+	.md( border-color, @color, @arguments );
+}
+.border-state-danger-lg(...){
+	.set-border-state( "danger" );
+	.lg( border-color, @color, @arguments );
+}
+
+// Gray colors
+// --------------------------------------
+
+// ** gray-base
+
+.gray-base(...){
+	.set-gray( "base" );
+	color: @color @arguments;
+}
+.gray-base-xs(...){
+	.set-gray( "base" );
+	.xs( color, @color, @arguments );
+}
+.gray-base-sm(...){
+	.set-gray( "base" );
+	.sm( color, @color, @arguments );
+}
+.gray-base-md(...){
+	.set-gray( "base" );
+	.md( color, @color, @arguments );
+}
+.gray-base-lg(...){
+	.set-gray( "base" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-gray-base(...){
+	.set-gray( "base" );
+	background-color: @color @arguments;
+}
+.bg-gray-base-xs(...){
+	.set-gray( "base" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-gray-base-sm(...){
+	.set-gray( "base" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-gray-base-md(...){
+	.set-gray( "base" );
+	.md( background-color, @color, @arguments );
+}
+.bg-gray-base-lg(...){
+	.set-gray( "base" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-gray-base(...){
+	.set-gray( "base" );
+	border-color: @color @arguments;
+}
+.border-gray-base-xs(...){
+	.set-gray( "base" );
+	.xs( border-color, @color, @arguments );
+}
+.border-gray-base-sm(...){
+	.set-gray( "base" );
+	.sm( border-color, @color, @arguments );
+}
+.border-gray-base-md(...){
+	.set-gray( "base" );
+	.md( border-color, @color, @arguments );
+}
+.border-gray-base-lg(...){
+	.set-gray( "base" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** gray-darker
+
+.gray-darker(...){
+	.set-gray( "darker" );
+	color: @color @arguments;
+}
+.gray-darker-xs(...){
+	.set-gray( "darker" );
+	.xs( color, @color, @arguments );
+}
+.gray-darker-sm(...){
+	.set-gray( "darker" );
+	.sm( color, @color, @arguments );
+}
+.gray-darker-md(...){
+	.set-gray( "darker" );
+	.md( color, @color, @arguments );
+}
+.gray-darker-lg(...){
+	.set-gray( "darker" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-gray-darker(...){
+	.set-gray( "darker" );
+	background-color: @color @arguments;
+}
+.bg-gray-darker-xs(...){
+	.set-gray( "darker" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-gray-darker-sm(...){
+	.set-gray( "darker" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-gray-darker-md(...){
+	.set-gray( "darker" );
+	.md( background-color, @color, @arguments );
+}
+.bg-gray-darker-lg(...){
+	.set-gray( "darker" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-gray-darker(...){
+	.set-gray( "darker" );
+	border-color: @color @arguments;
+}
+.border-gray-darker-xs(...){
+	.set-gray( "darker" );
+	.xs( border-color, @color, @arguments );
+}
+.border-gray-darker-sm(...){
+	.set-gray( "darker" );
+	.sm( border-color, @color, @arguments );
+}
+.border-gray-darker-md(...){
+	.set-gray( "darker" );
+	.md( border-color, @color, @arguments );
+}
+.border-gray-darker-lg(...){
+	.set-gray( "darker" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** gray
+
+.gray(...){
+	.set-gray();
+	color: @color @arguments;
+}
+.gray-xs(...){
+	.set-gray();
+	.xs( color, @color, @arguments );
+}
+.gray-sm(...){
+	.set-gray();
+	.sm( color, @color, @arguments );
+}
+.gray-md(...){
+	.set-gray();
+	.md( color, @color, @arguments );
+}
+.gray-lg(...){
+	.set-gray();
+	.lg( color, @color, @arguments );
+}
+
+.bg-gray(...){
+	.set-gray();
+	background-color: @color @arguments;
+}
+.bg-gray-xs(...){
+	.set-gray();
+	.xs( background-color, @color, @arguments );
+}
+.bg-gray-sm(...){
+	.set-gray();
+	.sm( background-color, @color, @arguments );
+}
+.bg-gray-md(...){
+	.set-gray();
+	.md( background-color, @color, @arguments );
+}
+.bg-gray-lg(...){
+	.set-gray();
+	.lg( background-color, @color, @arguments );
+}
+
+.border-gray(...){
+	.set-gray();
+	border-color: @color @arguments;
+}
+.border-gray-xs(...){
+	.set-gray();
+	.xs( border-color, @color, @arguments );
+}
+.border-gray-sm(...){
+	.set-gray();
+	.sm( border-color, @color, @arguments );
+}
+.border-gray-md(...){
+	.set-gray();
+	.md( border-color, @color, @arguments );
+}
+.border-gray-lg(...){
+	.set-gray();
+	.lg( border-color, @color, @arguments );
+}
+
+// ** gray-dark
+
+.gray-dark(...){
+	.set-gray( "dark" );
+	color: @color @arguments;
+}
+.gray-dark-xs(...){
+	.set-gray( "dark" );
+	.xs( color, @color, @arguments );
+}
+.gray-dark-sm(...){
+	.set-gray( "dark" );
+	.sm( color, @color, @arguments );
+}
+.gray-dark-md(...){
+	.set-gray( "dark" );
+	.md( color, @color, @arguments );
+}
+.gray-dark-lg(...){
+	.set-gray( "dark" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-gray-dark(...){
+	.set-gray( "dark" );
+	background-color: @color @arguments;
+}
+.bg-gray-dark-xs(...){
+	.set-gray( "dark" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-gray-dark-sm(...){
+	.set-gray( "dark" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-gray-dark-md(...){
+	.set-gray( "dark" );
+	.md( background-color, @color, @arguments );
+}
+.bg-gray-dark-lg(...){
+	.set-gray( "dark" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-gray-dark(...){
+	.set-gray( "dark" );
+	border-color: @color @arguments;
+}
+.border-gray-dark-xs(...){
+	.set-gray( "dark" );
+	.xs( border-color, @color, @arguments );
+}
+.border-gray-dark-sm(...){
+	.set-gray( "dark" );
+	.sm( border-color, @color, @arguments );
+}
+.border-gray-dark-md(...){
+	.set-gray( "dark" );
+	.md( border-color, @color, @arguments );
+}
+.border-gray-dark-lg(...){
+	.set-gray( "dark" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** gray-light
+
+.gray-light(...){
+	.set-gray( "light" );
+	color: @color @arguments;
+}
+.gray-light-xs(...){
+	.set-gray( "light" );
+	.xs( color, @color, @arguments );
+}
+.gray-light-sm(...){
+	.set-gray( "light" );
+	.sm( color, @color, @arguments );
+}
+.gray-light-md(...){
+	.set-gray( "light" );
+	.md( color, @color, @arguments );
+}
+.gray-light-lg(...){
+	.set-gray( "light" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-gray-light(...){
+	.set-gray( "light" );
+	background-color: @color @arguments;
+}
+.bg-gray-light-xs(...){
+	.set-gray( "light" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-gray-light-sm(...){
+	.set-gray( "light" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-gray-light-md(...){
+	.set-gray( "light" );
+	.md( background-color, @color, @arguments );
+}
+.bg-gray-light-lg(...){
+	.set-gray( "light" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-gray-light(...){
+	.set-gray( "light" );
+	border-color: @color @arguments;
+}
+.border-gray-light-xs(...){
+	.set-gray( "light" );
+	.xs( border-color, @color, @arguments );
+}
+.border-gray-light-sm(...){
+	.set-gray( "light" );
+	.sm( border-color, @color, @arguments );
+}
+.border-gray-light-md(...){
+	.set-gray( "light" );
+	.md( border-color, @color, @arguments );
+}
+.border-gray-light-lg(...){
+	.set-gray( "light" );
+	.lg( border-color, @color, @arguments );
+}
+
+// ** gray-lighter
+
+.gray-lighter(...){
+	.set-gray( "lighter" );
+	color: @color @arguments;
+}
+.gray-lighter-xs(...){
+	.set-gray( "lighter" );
+	.xs( color, @color, @arguments );
+}
+.gray-lighter-sm(...){
+	.set-gray( "lighter" );
+	.sm( color, @color, @arguments );
+}
+.gray-lighter-md(...){
+	.set-gray( "lighter" );
+	.md( color, @color, @arguments );
+}
+.gray-lighter-lg(...){
+	.set-gray( "lighter" );
+	.lg( color, @color, @arguments );
+}
+
+.bg-gray-lighter(...){
+	.set-gray( "lighter" );
+	background-color: @color @arguments;
+}
+.bg-gray-lighter-xs(...){
+	.set-gray( "lighter" );
+	.xs( background-color, @color, @arguments );
+}
+.bg-gray-lighter-sm(...){
+	.set-gray( "lighter" );
+	.sm( background-color, @color, @arguments );
+}
+.bg-gray-lighter-md(...){
+	.set-gray( "lighter" );
+	.md( background-color, @color, @arguments );
+}
+.bg-gray-lighter-lg(...){
+	.set-gray( "lighter" );
+	.lg( background-color, @color, @arguments );
+}
+
+.border-gray-lighter(...){
+	.set-gray( "lighter" );
+	border-color: @color @arguments;
+}
+.border-gray-lighter-xs(...){
+	.set-gray( "lighter" );
+	.xs( border-color, @color, @arguments );
+}
+.border-gray-lighter-sm(...){
+	.set-gray( "lighter" );
+	.sm( border-color, @color, @arguments );
+}
+.border-gray-lighter-md(...){
+	.set-gray( "lighter" );
+	.md( border-color, @color, @arguments );
+}
+.border-gray-lighter-lg(...){
+	.set-gray( "lighter" );
+	.lg( border-color, @color, @arguments );
+}
+
+// Additional colors
+// --------------------------------------
+
+// ** text
+
+.text(...){
+	.set-text();
+	color: @color @arguments;
+}
+.text-xs(...){
+	.set-text();
+	.xs( color, @color, @arguments );
+}
+.text-sm(...){
+	.set-text();
+	.sm( color, @color, @arguments );
+}
+.text-md(...){
+	.set-text();
+	.md( color, @color, @arguments );
+}
+.text-lg(...){
+	.set-text();
+	.lg( color, @color, @arguments );
+}
+
+.bg-text(...){
+	.set-text();
+	background-color: @color @arguments;
+}
+.bg-text-xs(...){
+	.set-text();
+	.xs( background-color, @color, @arguments );
+}
+.bg-text-sm(...){
+	.set-text();
+	.sm( background-color, @color, @arguments );
+}
+.bg-text-md(...){
+	.set-text();
+	.md( background-color, @color, @arguments );
+}
+.bg-text-lg(...){
+	.set-text();
+	.lg( background-color, @color, @arguments );
+}
+
+.border-text(...){
+	.set-text();
+	border-color: @color @arguments;
+}
+.border-text-xs(...){
+	.set-text();
+	.xs( border-color, @color, @arguments );
+}
+.border-text-sm(...){
+	.set-text();
+	.sm( border-color, @color, @arguments );
+}
+.border-text-md(...){
+	.set-text();
+	.md( border-color, @color, @arguments );
+}
+.border-text-lg(...){
+	.set-text();
+	.lg( border-color, @color, @arguments );
+}
+
+// ** body
+
+.body(...){
+	.set-body();
+	color: @color @arguments;
+}
+.body-xs(...){
+	.set-body();
+	.xs( color, @color, @arguments );
+}
+.body-sm(...){
+	.set-body();
+	.sm( color, @color, @arguments );
+}
+.body-md(...){
+	.set-body();
+	.md( color, @color, @arguments );
+}
+.body-lg(...){
+	.set-body();
+	.lg( color, @color, @arguments );
+}
+
+.bg-body(...){
+	.set-body();
+	background-color: @color @arguments;
+}
+.bg-body-xs(...){
+	.set-body();
+	.xs( background-color, @color, @arguments );
+}
+.bg-body-sm(...){
+	.set-body();
+	.sm( background-color, @color, @arguments );
+}
+.bg-body-md(...){
+	.set-body();
+	.md( background-color, @color, @arguments );
+}
+.bg-body-lg(...){
+	.set-body();
+	.lg( background-color, @color, @arguments );
+}
+
+.border-body(...){
+	.set-body();
+	border-color: @color @arguments;
+}
+.border-body-xs(...){
+	.set-body();
+	.xs( border-color, @color, @arguments );
+}
+.border-body-sm(...){
+	.set-body();
+	.sm( border-color, @color, @arguments );
+}
+.border-body-md(...){
+	.set-body();
+	.md( border-color, @color, @arguments );
+}
+.border-body-lg(...){
+	.set-body();
+	.lg( border-color, @color, @arguments );
+}
+
+// ** white
+
+.white(...){
+	.set-white();
+	color: @color @arguments;
+}
+.white-xs(...){
+	.set-white();
+	.xs( color, @color, @arguments );
+}
+.white-sm(...){
+	.set-white();
+	.sm( color, @color, @arguments );
+}
+.white-md(...){
+	.set-white();
+	.md( color, @color, @arguments );
+}
+.white-lg(...){
+	.set-white();
+	.lg( color, @color, @arguments );
+}
+
+.bg-white(...){
+	.set-white();
+	background-color: @color @arguments;
+}
+.bg-white-xs(...){
+	.set-white();
+	.xs( background-color, @color, @arguments );
+}
+.bg-white-sm(...){
+	.set-white();
+	.sm( background-color, @color, @arguments );
+}
+.bg-white-md(...){
+	.set-white();
+	.md( background-color, @color, @arguments );
+}
+.bg-white-lg(...){
+	.set-white();
+	.lg( background-color, @color, @arguments );
+}
+
+.border-white(...){
+	.set-white();
+	border-color: @color @arguments;
+}
+.border-white-xs(...){
+	.set-white();
+	.xs( border-color, @color, @arguments );
+}
+.border-white-sm(...){
+	.set-white();
+	.sm( border-color, @color, @arguments );
+}
+.border-white-md(...){
+	.set-white();
+	.md( border-color, @color, @arguments );
+}
+.border-white-lg(...){
+	.set-white();
+	.lg( border-color, @color, @arguments );
+}

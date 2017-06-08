@@ -1,0 +1,8 @@
+'use strict';
+
+define(['angular'], function (ng) {
+	'use strict';
+
+	return ng.module('app.directives', []);
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpcmVjdGl2ZXMvbW9kdWxlLmpzIl0sIm5hbWVzIjpbImRlZmluZSIsIm5nIiwibW9kdWxlIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPLENBQUMsU0FBRCxDQUFQLEVBQW9CLFVBQVVDLEVBQVYsRUFBYztBQUNqQzs7QUFDQSxRQUFPQSxHQUFHQyxNQUFILENBQVUsZ0JBQVYsRUFBNEIsRUFBNUIsQ0FBUDtBQUNBLENBSEQiLCJmaWxlIjoiZGlyZWN0aXZlcy9tb2R1bGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJkZWZpbmUoWydhbmd1bGFyJ10sIGZ1bmN0aW9uIChuZykge1xuXHQndXNlIHN0cmljdCc7XG5cdHJldHVybiBuZy5tb2R1bGUoJ2FwcC5kaXJlY3RpdmVzJywgW10pO1xufSk7XG4iXX0=

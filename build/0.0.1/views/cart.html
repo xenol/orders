@@ -1,0 +1,29 @@
+
+<breadcrumbs></breadcrumbs>
+<section class="section-main" data-ng-controller="CartCtrl">
+  <h1 class="section-title" data-ng-bind="title"></h1>
+  <div class="section-description"></div>
+  <div class="block-services cb">
+    <div data-ng-repeat="child in products" class="block-services__item">
+      <div class="row">
+        <div class="col-xs-12 col-sm-7"><a href="#!/{{child.routeParams.slug | escAttr}}/{{child.id | escAttr}}" title="{{(child.title || child.name) | escAttr}}" class="block-services__a">{{child.title || child.name}}</a>
+          <div class="small m-t-5">{{child.teaser_card || child.teaser_list}}</div>
+        </div>
+        <div class="col-xs-10 col-sm-4 block-services__price text-right p-r-20"><span data-ng-if="child.data.tarif &gt; 0">{{child.data.tarif * child.num | customCurrency:"&#8381;":".":" ":0:false}}</span><span data-ng-show="!child.data.tarif">{{"Free" | translate}}</span></div>
+        <div class="col-xs-2 col-sm-1 block-services__cart"><a href="" data-ng-click="del( child.id )" class="text"><i class="icon-trash"></i></a></div>
+      </div>
+    </div>
+    <div data-ng-if="!quantity()" class="block-services__item">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">{{"The cart is empty" | translate}}</div>
+      </div>
+    </div>
+    <div class="block-services__addnew cb"><a href="#!/"><span data-ng-if="quantity()">+ {{"Add another service" | translate}}</span><span data-ng-show="!quantity()">+ {{"Add service" | translate}}</span></a></div>
+  </div>
+  <div class="block-calculator" data-ng-controller="CartCtrl">
+    <div class="f-s-h2 text-center block-calculator__total">
+      <div class="p-b-10"><span data-ng-if="quantity()">{{total() | customCurrency:"&#8381;":".":" ":0:false}}</span></div>
+    </div>
+    <button data-ng-if="quantity()" data-ng-click="go('checkout')" class="btn btn-orders">{{"Go to the date and time" | translate}} <span class="arrow arrow-right block-calculator__arrow"></span></button>
+  </div>
+</section>

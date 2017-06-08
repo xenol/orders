@@ -1,0 +1,109 @@
+//- Panel mixin
+//--------------------------------------
+mixin panel()
+	- var panelClasses = ["panel-default", "panel-primary", "panel-success", "panel-info", "panel-warning", "panel-danger"];
+	- var hasClass = attributes && attributes.class && ( panelClasses.indexOf( attributes.class ) + 1 );
+	
+	.panel( class= hasClass ? "" : "panel-default" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelHeading()
+			+panelBody()
+			+panelFooter()
+				
+//- Panel Heading mixin
+//--------------------------------------
+mixin panelHeading()
+	.panel-heading&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelTitle()
+				
+//- Panel Title mixin
+//--------------------------------------
+mixin panelTitle()
+	.panel-title&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(50)}
+				
+//- Panel Body mixin
+//--------------------------------------
+mixin panelBody()
+	.panel-body&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(300)}
+				
+//- Panel Footer mixin
+//--------------------------------------
+mixin panelFooter()
+	.panel-footer&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+faFooter()
+			
+			
+//--------------------------------------
+//- Panel Colors
+//--------------------------------------
+
+//- Panel Primary
+//--------------------------------------
+mixin panelPrimary()
+	+panel().panel-primary&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelHeading()
+			+panelBody()
+			+panelFooter()
+
+//- Panel Success
+//--------------------------------------
+mixin panelSuccess()
+	+panel().panel-success&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelHeading()
+			+panelBody()
+			+panelFooter()
+
+//- Panel Info
+//--------------------------------------
+mixin panelInfo()
+	+panel().panel-info&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelHeading()
+			+panelBody()
+			+panelFooter()
+
+//- Panel Warning
+//--------------------------------------
+mixin panelWarning()
+	+panel().panel-warning&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelHeading()
+			+panelBody()
+			+panelFooter()
+
+//- Panel Danger
+//--------------------------------------
+mixin panelDanger()
+	+panel().panel-danger&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+panelHeading()
+			+panelBody()
+			+panelFooter()

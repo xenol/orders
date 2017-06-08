@@ -1,0 +1,1 @@
+"use strict";define("loader",[],function(){var e={paceInit:{selector:"body.paced",module:"ui/pace-init"}};for(var n in e)!function(n){document.querySelectorAll(e[n].selector).length&&function(t){require([e[n].module],function(e){e.init(t)})}(e[n].selector)}(n)});

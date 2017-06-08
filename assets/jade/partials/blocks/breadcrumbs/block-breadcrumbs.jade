@@ -1,0 +1,8 @@
+block breadcrumbs-args
+	- var breadcrumbs = {};
+
+ol.breadcrumb.breadcrumbs.m-b-10&attributes( breadcrumbs )
+	block breadcrumbs-items
+		li.breadcrumbs__li__active Услуги
+		li: a.breadcrumbs__a( href="#!/view2" ) Заказ
+		li: a.breadcrumbs__a( href="#!/view2" ) Дата и время

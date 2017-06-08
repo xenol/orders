@@ -1,0 +1,19 @@
+extends /extends/default
+	
+append args
+	- body = { class: "empty" };
+	- header = {};
+	- main = {};
+	- footer = {};
+		
+block navbar-before
+	block navbar-row
+		block navbar
+
+block content-before
+	block content-row
+		block content
+	
+block footer-before
+	block footer-row
+		block footer

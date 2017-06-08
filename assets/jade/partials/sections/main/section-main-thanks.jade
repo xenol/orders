@@ -1,0 +1,13 @@
+extends section-main
+
+append section-main-args
+	- sectionMainTitle.class = "text-center";
+	- sectionMainTitleHTML = "Ремонт, 2 услуги 29 апреля в 10:00";
+	- sectionMainDescriptionHTML = "Заказ оформлен. При необходимости, диспетчер свяжется с вами для уточнения";
+
+prepend section-main-title
+	include /partials/blocks/icon/block-icon-check
+
+block section-main-content
+	.text-center.p-t-15.m-b-20
+		a.bold( href="#" title="" ) Мои заказы

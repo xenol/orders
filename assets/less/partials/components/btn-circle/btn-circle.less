@@ -1,0 +1,36 @@
+// Additional links class
+// ======================================
+
+// Circled buttons
+// ----------------------------------------------
+.btn-circle-200-5
+{
+	.btn-circle( 200px, 5px );
+}
+
+.btn-circle-100
+{
+	.btn-circle( 100px, 1px );
+}
+
+.btn-circle
+{
+	.btn-circle();
+}
+
+.btn-circle( @_size: 50px, @_border-width: 1px )
+{
+	@size: @_size;
+	@border-width: @_border-width;
+	@font-size: round( ( @size - @border-width * 2 ) / 2 );
+	
+	.square(@size);
+	border-width: @border-width;
+	border-style: solid;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	line-height: 1;
+	font-size: @font-size;
+	padding-top: round( ( @size - @font-size - @border-width * 2 )/2 );
+}

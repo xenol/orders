@@ -1,0 +1,31 @@
+//- Well mixin
+//--------------------------------------
+mixin well( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	.well&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+			
+//- Well LG mixin
+//--------------------------------------
+mixin wellLg( className )
+	+well("well-lg")&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}
+			
+//- Well SM mixin
+//--------------------------------------
+mixin wellSm( className )
+	+well("well-sm")&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(100)}

@@ -1,0 +1,25 @@
+extends block-calculator
+
+append calculator-args
+	- calculator["data-ng-controller"] = "CartCtrl";
+
+block calculator-total
+	span( data-ng-if="price > 0" ) {{num * price | customCurrency:"&#8381;":".":" ":0:false}}
+	span( data-ng-show="!price" ) {{"Free" | translate}}
+	
+block calculator-panel-before
+	.row.block-calculator__panel.middle-xs( data-ng-if="price")
+		block calculator-panel
+			.col-xs-8.col-sm-8
+				.btn-group( role="group" )
+					button.btn.block-calculator__dec( data-ng-click="dec()" )
+					button.btn.block-calculator__inc( data-ng-click="inc()" )
+				
+			.col-xs-4.col-sm-4.block-calculator__price.text-right {{num}} x {{price | customCurrency:"&#8381;":".":" ":0:false}}
+
+block calculator-date-before
+
+block calculator-button-before
+	button.btn.btn-orders( data-ng-click="go('cart')" )
+		block calculator-button
+			| {{"Add to cart" | translate}}

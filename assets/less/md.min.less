@@ -1,0 +1,21 @@
+// Variables and mixins
+@import "variables/paths"; 
+@import "variables/bootstrap";
+@import "variables/config";
+@import "variables/mixins";
+
+// Components
+@import "@{components-path}/border-radius/border-radius.md.less";
+@import "@{components-path}/border-width/border-width.md.less";
+@import "@{components-path}/hr/hr.md.less";
+@import "@{components-path}/loading/loading-md";
+@import "@{components-path}/margins-paddings/margins-paddings.md.less";
+
+// if you switch from the mobile version to the full version on your mobile device
+// you need to patch the mobile styles to the desktop
+//@media screen and (max-width: @screen-xs-max){
+//	@import "@{components-path}/bootstrap-no-responsive/bootstrap-no-responsive.md.less";
+//}
+
+// Sections
+//@import "@{sections-path}/header/section-header.md.less";

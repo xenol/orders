@@ -1,0 +1,38 @@
+.thumbnail
+{
+	position: relative;
+	
+	// Without paddings and borders
+	&.thumbnail-wide,
+	&.wide {
+		border: none;
+		padding: 0;
+		border-radius: 0;
+		background-color: transparent;
+	}
+	
+	// Styles for height fixed thumbs
+	&.thumbnail-fixed {
+		overflow: hidden;
+	}
+}
+
+.thumbnail__link + .thumbnail__link {
+	margin-top: 4px;
+}
+
+.thumbnail__link {
+	.font-type(sans-condensed);
+	font-size: 18px;
+	line-height: @line-height-base;
+}
+
+.thumbnail__caption {
+	margin: 0;
+}
+
+.thumbnail-wide__caption {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}

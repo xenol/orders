@@ -1,0 +1,23 @@
+// Floating Area classes
+// ======================================
+.floating-area {
+}
+
+.floating-wrapper {
+	position: relative;
+	z-index: 1;
+}
+
+.floating-column {
+	z-index: 2;
+}
+.floating-column:after,
+.floating-column:before {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.floating-column-top,
+.floating-column-bottom {
+}

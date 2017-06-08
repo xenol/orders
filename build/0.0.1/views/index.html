@@ -1,0 +1,13 @@
+
+<breadcrumbs></breadcrumbs>
+<section class="section-main" data-ng-controller="MainCtrl">
+  <h1 class="section-title" data-ng-bind="title"></h1>
+  <div class="section-description" data-ng-bind="description"></div>
+  <div class="block-services cb">
+    <div data-ng-repeat="child in info.children" class="block-services__item">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12"><a href="#!/{{child.slug}}" title="{{(child.title || child.name) | escAttr}}" class="block-services__a">{{child.title || child.name}}</a></div>
+      </div>
+    </div>
+  </div>
+</section>

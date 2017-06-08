@@ -1,0 +1,57 @@
+//- Label mixin
+//--------------------------------------
+mixin label( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "label-default";
+	
+	span.label&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(5)}
+			
+			
+//- Label Primary mixin
+//--------------------------------------
+mixin labelPrimary()
+	+label( "label-primary" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(5)}
+			
+//- Label Success mixin
+//--------------------------------------
+mixin labelSuccess()
+	+label( "label-success" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(5)}
+			
+//- Label Info mixin
+//--------------------------------------
+mixin labelInfo()
+	+label( "label-info" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(5)}
+			
+//- Label Warning mixin
+//--------------------------------------
+mixin labelWarning()
+	+label( "label-warning" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(5)}
+			
+//- Label Danger mixin
+//--------------------------------------
+mixin labelDanger()
+	+label( "label-danger" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(5)}

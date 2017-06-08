@@ -1,0 +1,73 @@
+// Mixins
+@import "variables/mixins";
+
+// Local @font-faces
+@import "./fonts/dinpro";
+
+// Components
+@import "partials/components/button/button";
+@import "partials/components/caret/caret";
+@import "partials/components/pikaday-order-theme/pikaday-order-theme";
+@import "partials/components/tether-select-theme/tether-select-theme";
+
+// The theme patches
+// ==============================================
+
+body {
+	font-family: 'DINPro-Regular', sans-serif;
+}
+
+.bold {
+	font-family: 'DINPro-Medium', sans-serif;
+	font-weight: bold;
+}
+
+.container-fluid:after,
+.container-fluid:before,
+.container:after,
+.container:before {
+	content: " ";
+	display: table;
+}
+
+.container-fluid:after,
+.container:after {
+	clear: both;
+}
+
+.container-fluid,
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 10px;
+	padding-right: 10px
+}
+
+
+.container,
+.container-fluid
+{
+	position: relative;
+}
+
+// The inner container must not have a width
+// --------------------------------------
+.container .container
+{
+	width: auto !important;
+}
+
+.container {
+	
+	@media screen and (min-width: @screen-sm-min) {
+		width: @container-sm;
+	}
+	
+	@media screen and (min-width: @screen-md-min) {
+		width: @container-md;
+	}
+	
+	@media screen and (min-width: @screen-lg-min) {
+		width: @container-lg;
+	}
+}

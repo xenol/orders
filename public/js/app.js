@@ -1,0 +1,10 @@
+'use strict';
+
+define(['angular', 'angularRoute', 'angularStorage', './controllers/index', './directives/index', './filters/index'], function (angular) {
+	'use strict';
+
+	return angular.module('app', ['app.controllers', 'app.directives', 'app.filters',
+	//'app.services',
+	'ngRoute', 'ngStorage']);
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyJdLCJuYW1lcyI6WyJkZWZpbmUiLCJhbmd1bGFyIiwibW9kdWxlIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPLENBQ04sU0FETSxFQUVOLGNBRk0sRUFHTixnQkFITSxFQUlOLHFCQUpNLEVBS04sb0JBTE0sRUFNTixpQkFOTSxDQUFQLEVBUUksbUJBQVc7QUFDZDs7QUFFQSxRQUFPQyxRQUFRQyxNQUFSLENBQWUsS0FBZixFQUFzQixDQUM1QixpQkFENEIsRUFFNUIsZ0JBRjRCLEVBRzVCLGFBSDRCO0FBSTVCO0FBQ0EsVUFMNEIsRUFNNUIsV0FONEIsQ0FBdEIsQ0FBUDtBQVFBLENBbkJEIiwiZmlsZSI6ImFwcC5qcyIsInNvdXJjZXNDb250ZW50IjpbImRlZmluZShbXG5cdCdhbmd1bGFyJyxcblx0J2FuZ3VsYXJSb3V0ZScsXG5cdCdhbmd1bGFyU3RvcmFnZScsXG5cdCcuL2NvbnRyb2xsZXJzL2luZGV4Jyxcblx0Jy4vZGlyZWN0aXZlcy9pbmRleCcsXG5cdCcuL2ZpbHRlcnMvaW5kZXgnLFxuXHQvLycuL3NlcnZpY2VzL2luZGV4Jyxcbl0sICBhbmd1bGFyID0+IHtcblx0J3VzZSBzdHJpY3QnO1xuXG5cdHJldHVybiBhbmd1bGFyLm1vZHVsZSgnYXBwJywgW1xuXHRcdCdhcHAuY29udHJvbGxlcnMnLFxuXHRcdCdhcHAuZGlyZWN0aXZlcycsXG5cdFx0J2FwcC5maWx0ZXJzJyxcblx0XHQvLydhcHAuc2VydmljZXMnLFxuXHRcdCduZ1JvdXRlJyxcblx0XHQnbmdTdG9yYWdlJ1xuXHRdKTtcbn0pO1xuIl19

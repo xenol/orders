@@ -1,0 +1,51 @@
+//---------------------------
+//- Youtube mixins
+//---------------------------
+	
+//- Youtube mixin
+//---------------------------
+mixin youtube( num )
+	- var defaults = {};
+	- var num = num ? num : 5;
+	
+	- var video = [];
+		- video[0] = 'https://www.youtube.com/embed/MhoAatjIVF8';
+		- video[1] = 'https://www.youtube.com/embed/XR3GD35r4uo';
+		- video[2] = 'https://www.youtube.com/embed/sAmf6K9ECPE';
+		- video[3] = 'https://www.youtube.com/embed/XtuIG2I3AJw';
+		- video[4] = 'https://www.youtube.com/embed/OeeHV76Wqps';
+	
+	- var image = [];
+		- image[0] = 'https://i.ytimg.com/vi/MhoAatjIVF8/hqdefault.jpg';
+		- image[1] = 'https://i.ytimg.com/vi/XR3GD35r4uo/hqdefault.jpg';
+		- image[2] = 'https://i.ytimg.com/vi/sAmf6K9ECPE/hqdefault.jpg';
+		- image[3] = 'https://i.ytimg.com/vi/XtuIG2I3AJw/hqdefault.jpg';
+		- image[4] = 'https://i.ytimg.com/vi/OeeHV76Wqps/hqdefault.jpg';
+	
+	- var id = 'youtube-' + randInt(10,100);
+	
+	- attributes = jsonMerge(attributes, defaults);
+	
+	.table.youtube&attributes( attributes )
+		.tr
+			.td.loading-pulse: .embed-responsive.embed-responsive-16by9: iframe.embed-responsive-item( src="#{video[0]}" frameborder="0" allowfullscreen)
+				
+			- if( num > 1 )
+				.td
+					.swiper-container( id= id data-swiperz-off-modes= "" )
+						.swiper-wrapper
+							if( block )
+								block
+							else
+								+loop( num )
+									- var v = video[index] ? video[index] : video[0];
+									- var i = image[index] ? image[index] : image[0];
+									
+									.swiper-slide
+										+youtube-image( v, i )
+									
+								
+mixin youtube-image( video, image )
+	+a( data-vid="#{video}" )
+		.youtube-media( style="background-image: url('#{image}')" )
+			.time.label.label-default: time( datetime="#{randInt(10,20)}:#{randInt(10,50)}" ) #{randInt(10,20)}:#{randInt(10,50)}

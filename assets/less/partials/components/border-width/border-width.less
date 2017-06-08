@@ -1,0 +1,53 @@
+// Border Widths
+// ======================================
+
+// border-top
+.b-t-0 {
+	border-top-width: 0 !important;
+}
+
+.b-t-1 {
+	border-top-width: 1px !important;
+}
+
+// border-bottom
+.b-b-0 {
+	border-bottom-width: 0 !important;
+}
+
+.b-b-1 {
+	border-bottom-width: 1px !important;
+}
+
+// border-right
+.b-r-0 {
+	border-right-width: 0 !important;
+}
+
+.b-r-1 {
+	border-right-width: 1px !important;
+}
+
+// border-left
+.b-l-0 {
+	border-left-width: 0 !important;
+}
+
+.b-l-1 {
+	border-left-width: 1px !important;
+}
+
+// borders left and right
+.b-x-0:extend( .b-r-0, .b-l-0 ){};
+
+.b-x-1:extend( .b-r-1, .b-l-1 ){};
+
+// borders top and bottom
+.b-y-0:extend( .b-t-0, .b-b-0 ){};
+
+.b-y-1:extend( .b-t-1, .b-b-1 ){};
+
+// borders all
+.b-a-0:extend( .b-t-0, .b-r-0, .b-b-0, .b-l-0 ) {}
+
+.b-a-1:extend( .b-t-1, .b-r-1, .b-b-1, .b-l-1 ) {}

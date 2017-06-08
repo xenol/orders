@@ -1,0 +1,41 @@
+//- Image mixin
+//---------------------------
+mixin img( width )
+	- height = 0;
+	
+	//- You can send var height in block:
+	//- height = 100;
+	- if( block )
+		block
+		
+	- var defaults = {};
+		- defaults.alt = loremIpsum(20);
+		- defaults.class = "";
+		- defaults.src = "http://beerhold.it/" + ( width ? width : 700 ) + "/" + ( height ? height : getImageHeightBase( width ? width : 700 ) ) + "/" + randInt(1,1000);
+	
+	img&attributes( jsonMerge(attributes, defaults) )
+		
+		
+		
+//---------------------------
+//- Image placeholder mixin fom placeimg.com
+//---------------------------
+mixin placeImg( width )
+	- height = 0;
+	- category = 'any';
+	- style = '';
+	
+	//- You can send variables in block, such as: category, style and height:
+	//- category = 'any', 'animals', 'arch', 'nature', 'people', 'tech';
+	//- style = 'grayscale', 'sepia';
+	//- height = 100;
+	
+	- if( block )
+		block
+	
+	- var defaults = {};
+		- defaults.alt = loremIpsum(20);
+		- defaults.class = "";
+		- defaults.src = "http://placeimg.com/" + ( width ? width : 700 ) + "/" + ( height ? height : getImageHeightBase( width ? width : 700 ) ) + "/" + ( category ? category : "any" ) + "/" + ( style ? style + "/" : "" ) + randInt(1,100);
+	
+	img&attributes( jsonMerge(attributes, defaults) )

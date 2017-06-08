@@ -1,0 +1,49 @@
+block calculator-args
+	- var calculator = {};
+
+.block-calculator&attributes( calculator )
+	block calculator-content
+		block calculator-total-before
+			.f-s-h2.text-center.block-calculator__total
+				block calculator-total
+					| 0 &#8381;
+		
+		block calculator-panel-before
+			.row.block-calculator__panel.middle-xs
+				block calculator-panel
+					.col-xs-6.col-sm-8
+						.btn-group( role="group" )
+							button.btn.block-calculator__dec
+							button.btn.block-calculator__inc
+						
+					.col-xs-6.col-sm-4.block-calculator__price.text-right 1 x 250 &#8381;
+		
+		block calculator-date-before
+			.row.block-calculator__date.cb
+				block calculator-date
+					.col-xs-12.col-sm-12
+						label.bold.m-b-20 Выберите удобный день и время
+						
+						form.form-inline.block-calculator__date-form
+							.form-group.form-group-lg.block-calculator__form-group
+								.input-group
+									input.form-control.block-calculator__input( type="text" placeholder="Введите дату" )
+									span.input-group-addon.btn.block-calculator__input-addon: .caret
+									
+							.form-group.form-group-lg.block-calculator__form-group
+								select.tether-select
+									option 09:00
+									option 10:00
+									option 11:00
+									option 12:00
+									option 13:00
+									option 14:00
+									option 15:00
+									option 16:00
+									option 17:00
+									option 18:00
+				
+		block calculator-button-before
+			a.btn.btn-orders( href="#" title="" )
+				block calculator-button
+					| Добавить

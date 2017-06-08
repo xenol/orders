@@ -1,0 +1,36 @@
+section,
+.section {
+	position: relative;
+	.clearfix();
+	
+	& .row > .section-title,
+	& .row > .section-description
+	{
+		.grid-gutter-width( margin-left, 2 );
+		.grid-gutter-width( margin-right, 2 );
+	}
+	
+	& > .row,
+	& > .row-col
+	{
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	
+/*
+	& > .section-title,
+	& > .section-description
+	{
+		.grid-gutter-width( margin-left, 2 );
+		.grid-gutter-width( margin-right, 2 );
+	}
+*/
+	
+	& > .section-title {
+		margin: 0 0 30px !important;
+	}
+	
+	& > .section-description {
+		margin: 0 0 25px !important;
+	}
+}

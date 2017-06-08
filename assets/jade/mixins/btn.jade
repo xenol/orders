@@ -1,0 +1,378 @@
+//---------------------------
+//- Btns
+//---------------------------
+
+//- Btn mixin
+//---------------------------
+mixin btn( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn-default";
+		- defaults.role = "button";
+	
+	+a()( class= "btn" )&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Btn defaut mixin
+//---------------------------
+mixin btnDefault( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+btn()(class= "btn-default")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Btn primary mixin
+//---------------------------
+mixin btnPrimary( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+btn()(class= "btn-primary")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Btn info mixin
+//---------------------------
+mixin btnInfo( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+btn()(class= "btn-info")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Btn success mixin
+//---------------------------
+mixin btnSuccess( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+btn()(class= "btn-success")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Btn warning mixin
+//---------------------------
+mixin btnWarning( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+btn()(class= "btn-warning")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Btn danger mixin
+//---------------------------
+mixin btnDanger( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+btn()(class= "btn-danger")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+			
+			
+//----------------------------------
+//- BTN Group mixin
+//----------------------------------
+mixin btnGroup( num )
+	+list( num, "div" )( class="btn-group" role="group" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+btn()
+
+//- BTN LG Group mixin
+//----------------------------------
+mixin btnGroupLg( num )
+	+btnGroup( num )( class="btn-group-lg" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+btn()
+
+//- BTN SM Group mixin
+//----------------------------------
+mixin btnGroupSm( num )
+	+btnGroup( num )( class="btn-group-sm" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+btn()
+
+//- BTN XS Group mixin
+//----------------------------------
+mixin btnGroupXs( num )
+	+btnGroup( num )( class="btn-group-xs" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+btn()
+
+
+//---------------------------
+//- Buttons
+//---------------------------
+
+//- Button mixin
+//---------------------------
+mixin button( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		- defaults.type = "button";
+	
+	button&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Button default mixin
+//---------------------------
+mixin buttonDefault( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+button()(class= "btn btn-default")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Button primary mixin
+//---------------------------
+mixin buttonPrimary( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+button()(class= "btn btn-primary")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Button success mixin
+//---------------------------
+mixin buttonSuccess( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+button()(class= "btn btn-success")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Button info mixin
+//---------------------------
+mixin buttonInfo( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+button()(class= "btn btn-info")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Button warning mixin
+//---------------------------
+mixin buttonWarning( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+button()(class= "btn btn-warning")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Button danger mixin
+//---------------------------
+mixin buttonDanger( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+button()(class= "btn btn-danger")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+			
+//---------------------------
+//- Button Dismissible mixin
+//---------------------------
+mixin buttonDismissible( className )
+	- var defaults = {};
+		- defaults["aria-label"] = "Закрыть";
+		- defaults.class = className ? className : "";
+		- defaults["data-dismiss"] = "alert";
+	
+	+button()(class= "close")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			span( aria-hidden="true" ) &times;
+
+//- Button Dismissible alias mixin
+//---------------------------
+mixin buttonDismiss( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	+buttonDismissible()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			span( aria-hidden="true" ) &times;
+
+
+//----------------------------------
+//- Buttons Group mixin
+//----------------------------------
+mixin buttonGroup( num )
+	+list( num, "div" )( class="btn-group" role="group" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+button()
+
+//- Buttons LG Group mixin
+//----------------------------------
+mixin buttonGroupLg( num )
+	+buttonGroup( num )( class="btn-group-lg" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+button()
+
+//- Buttons SM Group mixin
+//----------------------------------
+mixin buttonGroupSm( num )
+	+buttonGroup( num )( class="btn-group-sm" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+button()
+
+//- Buttons XS Group mixin
+//----------------------------------
+mixin buttonGroupXs( num )
+	+buttonGroup( num )( class="btn-group-xs" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+button()
+
+
+//----------------------------------
+//- Navbar Buttons
+//----------------------------------
+
+//- Navbar Btn
+//----------------------------------
+mixin btnNavbar( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		
+	+btn()(class= "navbar-btn")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+
+//- Navbar Button
+//----------------------------------
+mixin buttonNavbar( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		
+	+button()(class= "navbar-btn")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+
+
+//----------------------------------
+//- Tooltip Buttons
+//----------------------------------
+
+//- Tooltip Btn
+//----------------------------------
+mixin btnTooltip( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		- defaults["data-toggle"] = "tooltip";
+		- defaults["data-placement"] = "top";
+		
+	+btn()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+
+//- Tooltip Button
+//----------------------------------
+mixin buttonTooltip( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		- defaults["data-toggle"] = "tooltip";
+		- defaults["data-placement"] = "top";
+		
+	+button()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+
+
+//----------------------------------
+//- Tooltip Buttons
+//----------------------------------
+
+//- Popover Btn
+//----------------------------------
+mixin btnPopover( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		- defaults["data-toggle"] = "popover";
+		- defaults["data-placement"] = "top";
+		
+	+btn()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+
+//- Popover Button
+//----------------------------------
+mixin buttonPopover( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn btn-default";
+		- defaults["data-toggle"] = "popover";
+		- defaults["data-placement"] = "top";
+	
+	+button()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}

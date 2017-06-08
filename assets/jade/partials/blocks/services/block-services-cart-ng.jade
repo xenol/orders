@@ -1,0 +1,25 @@
+extends block-services
+
+block services-items
+	.block-services__item( data-ng-repeat="child in products" )
+		.row
+			.col-xs-12.col-sm-7
+				a.block-services__a( href="#!/{{child.routeParams.slug | escAttr}}/{{child.id | escAttr}}" title="{{(child.title || child.name) | escAttr}}" ) {{child.title || child.name}}
+				.small.m-t-5 {{child.teaser_card || child.teaser_list}}
+				
+			.col-xs-10.col-sm-4.block-services__price.text-right.p-r-20
+				span( data-ng-if="child.data.tarif > 0" ) {{child.data.tarif * child.num | customCurrency:"&#8381;":".":" ":0:false}}
+				span( data-ng-show="!child.data.tarif" ) {{"Free" | translate}}
+				
+			.col-xs-2.col-sm-1.block-services__cart: a.text( href="" data-ng-click="del( child.id )" ): i.icon-trash
+			
+	.block-services__item( data-ng-if="!quantity()" )
+		.row
+			.col-xs-12.col-sm-12 {{"The cart is empty" | translate}}
+				
+			
+block services-items-after
+	.block-services__addnew.cb
+		a( href="#!/" )
+			span( data-ng-if="quantity()" ) + {{"Add another service" | translate}}
+			span( data-ng-show="!quantity()" ) + {{"Add service" | translate}}

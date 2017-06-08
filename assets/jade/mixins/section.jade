@@ -1,0 +1,41 @@
+//---------------------------
+//- Section mixins
+//---------------------------
+	
+//- Section mixin
+//---------------------------
+mixin section( tag )
+	#{tag ? tag: "section"}( class= tag != "section" ? "section" : "" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+sectionTitle()
+			+sectionDesc()
+			.row-col #{loremIpsum(100)}
+	
+//- Section Title mixin
+//---------------------------
+mixin sectionTitle( tag )
+	#{tag ? tag: "h1"}.section-title&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(25)}
+	
+//- Section Description mixin
+//---------------------------
+mixin sectionDesrition( tag )
+	#{tag ? tag: "div"}.section-description&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(50)}
+	
+//- Section Description alias mixin
+//---------------------------
+mixin sectionDesc( tag )
+	+sectionDesrition( tag )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(50)}

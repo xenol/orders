@@ -1,0 +1,72 @@
+//---------------------------
+//- Pagination
+//---------------------------
+mixin pagination( num )
+	+ul( num + 2 )( class="pagination" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == 1 } class= { "disabled": i == 0 } )
+				- if( i == 0 )
+					span #[span( aria-hidden="true" ) &laquo;]
+					
+				- else if( i == 1 )
+					span #{i} #[span.sr-only (current)]
+					
+				- else if( i == num + 1 )
+					+a()( aria-label= "Next" title= false ) #[span( aria-hidden="true" ) &raquo;]
+					
+				- else
+					+a() #{i}
+					
+//- Pagination LG
+//---------------------------
+mixin paginationLg( num )
+	+pagination( num )( class="pagination-lg" )
+					
+//- Pagination SM
+//---------------------------
+mixin paginationSm( num )
+	+pagination( num )( class="pagination-sm" )
+	
+//- Pager
+//---------------------------
+mixin pager( prev, next )
+	+ul( 2 )( class="pager" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()( class= { "disabled": i == 0 } )
+				- if( i == 0 )
+					+a() 
+						- if(prev)
+							| #{prev}
+						- else
+							span( aria-hidden="true" ) &larr; Пред.
+				- else
+					+a()
+						- if(next)
+							| #{next}
+						- else
+							span( aria-hidden="true" ) След. &rarr;
+	
+//- Pager Align
+//---------------------------
+mixin pagerAlign( prev, next )
+	+pager( prev, next )
+		- if( block )
+			block
+		- else
+			+li()( class= { "disabled previous": i == 0 } class= { "next": i == 1 } )
+				- if( i == 0 )
+					+a() 
+						- if(prev)
+							| #{prev}
+						- else
+							span( aria-hidden="true" ) &larr; Пред.
+				- else
+					+a()
+						- if(next)
+							| #{next}
+						- else
+							span( aria-hidden="true" ) След. &rarr;

@@ -1,0 +1,7 @@
+extends block-services
+
+block services-items
+	.block-services__item( data-ng-repeat="child in info.children" )
+		.row
+			.col-xs-12.col-sm-12
+				a.block-services__a( href="#!/{{child.slug}}" title="{{(child.title || child.name) | escAttr}}" ) {{child.title || child.name}}

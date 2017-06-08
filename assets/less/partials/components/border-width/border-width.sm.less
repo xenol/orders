@@ -1,0 +1,53 @@
+// Border Widths for sm mode
+// ======================================
+
+// border-top
+.b-t-0-sm {
+	border-top-width: 0 !important;
+}
+
+.b-t-1-sm {
+	border-top-width: 1px !important;
+}
+
+// border-bottom
+.b-b-0-sm {
+	border-bottom-width: 0 !important;
+}
+
+.b-b-1-sm {
+	border-bottom-width: 1px !important;
+}
+
+// border-right
+.b-r-0-sm {
+	border-right-width: 0 !important;
+}
+
+.b-r-1-sm {
+	border-right-width: 1px !important;
+}
+
+// border-left
+.b-l-0-sm {
+	border-left-width: 0 !important;
+}
+
+.b-l-1-sm {
+	border-left-width: 1px !important;
+}
+
+// borders left and right
+.b-x-0-sm:extend( .b-r-0-sm, .b-l-0-sm ) {};
+
+.b-x-1-sm:extend( .b-r-1-sm, .b-l-1-sm ) {};
+
+// borders top and bottom
+.b-y-0-sm:extend( .b-t-0-sm, .b-b-0-sm ) {};
+
+.b-y-1-sm:extend( .b-t-1-sm, .b-b-1-sm ) {};
+
+// borders all
+.b-a-0-sm:extend( .b-t-0-sm, .b-r-0-sm, .b-b-0-sm, .b-l-0-sm ) {}
+
+.b-a-1-sm:extend( .b-t-1-sm, .b-r-1-sm, .b-b-1-sm, .b-l-1-sm ) {}

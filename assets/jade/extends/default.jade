@@ -1,0 +1,80 @@
+include /config/config
+	
+block args
+	- var body = {};
+		- body.class = "default";
+		- body.id = "page";
+		
+	- var header = {};
+		- header.class = "container-fluid";
+		
+	- var main = {};
+		- main.class = "container-fluid";
+		
+	- var footer = {};
+		- footer.class = "container-fluid";
+		
+	- var basedir = basedir ? basedir : ".";
+		
+doctype html
+html(lang="en" class="no-js")
+	head
+		block meta
+			meta(charset='utf-8')
+			meta(http-equiv='X-UA-Compatible', content='IE=edge')
+			meta(name='viewport', content='width=device-width, initial-scale=1')
+			meta(name='format-detection', content='telephone=yes')
+			meta(name='description', content= themeName )
+			meta(name='keywords', content= themeFocusName )
+			meta(http-equiv="pragma" content="no-cache")
+			
+		block title
+			title The Title
+			
+		block styles
+			link(rel='shortcut icon' href= basedir + '/img/favicon.ico')
+			link#screen-main-css(rel='stylesheet' type='text/css' media='all' href= basedir + '/css/main.min.css' + ( version ? '?v=' + version : '' ))
+			
+		block scripts
+			<!--[if lt IE 9]>
+			script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js?v=3.7.2')
+			script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js?v=1.4.2')
+			<![endif]-->
+		
+	body&attributes( body )
+		block body-after
+			block navbar-before
+				header&attributes( header )
+					.row
+						block navbar-row
+							.col-xs-12.col-sm-12
+								block navbar
+									span The Main Navbar
+							
+			block content-before
+				main&attributes( main )
+					.row
+						block content-row
+							.col-xs-12.col-sm-12
+								block content
+									span The Main Content
+									
+			block footer-before
+				footer&attributes( footer )
+					.row
+						block footer-row
+							.col-xs-12.col-sm-12
+								block footer
+									span The Main Footer
+									
+			block footer-after
+				- if( locals )
+					- var pageJson = {};
+						- pageJson.basedir = basedir ? basedir : ".";
+						- pageJson.serverUrl = locals.serverUrl ? locals.serverUrl : "";
+						- pageJson.isPublic = locals.isPublic ? locals.isPublic : "";
+						
+					script
+						| var pageJson = !{JSON.stringify( pageJson )};
+				
+				script( data-main= basedir + "/js/main.js" src= basedir + "/bower_components/requirejs/require.js?v=2.3.2" )

@@ -1,0 +1,1045 @@
+{
+  "type": "root",
+  "id": 88,
+  "slug": "repair",
+  "parent_id": null,
+  "name": "Ремонт",
+  "title": "Заказ ремонта",
+  "teaser_card": "Выберите услугу и время прихода специалиста. Оплата после выполнения",
+  "teaser_list": "",
+  "data": {
+    "description": "",
+    "is_multi": true,
+    "has_date": "datetime",
+    "has_wishes": true
+  },
+  "children": [
+    {
+      "type": "category",
+      "id": 89,
+      "slug": "plumbing",
+      "parent_id": 88,
+      "name": "Сантехнические работы",
+      "title": "Сантехнические работы",
+      "teaser_card": "",
+      "teaser_list": "",
+      "data": null,
+      "children": [
+        {
+          "type": "service",
+          "id": 113224,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Диагностика",
+          "teaser_card": "Когда не знаете, что точно сломалось и какие услуги нужны. Мастер разберется на месте",
+          "teaser_list": "Когда не знаете, что точно сломалось и какие услуги нужны. Мастер разберется на месте",
+          "data": {
+            "tarif": 0,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 113507,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена гибкой подводки к прибору",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 113790,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена запорного крана",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1650,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 114073,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена прокладки смесителя \/ сифона",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 114356,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Уплотнение соединений",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 300,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 114639,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена прокладок на полотенцесушителе",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1800,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 115205,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена унитаза",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 11500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 114922,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Развоздушивание полотенцесушителя",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 115488,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена умывальника",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 4700,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 115771,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена душевой кабины",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 14980,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 116054,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена сливного бачка",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 4450,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 116337,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена выпуска для ванны",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 2000,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 116620,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена арматуры сливного бачка",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 2550,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 116903,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена кухонного смесителя",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 10900,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 117186,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена смесителя умывальника",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 5550,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 117469,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена смесителя душевой кабины",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 4850,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 118035,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена шланга душа",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1900,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 117752,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Ремонт шланга душа",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 118318,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Прочистка засора канализационной сети внутри апартамента",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 118601,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Прочистка фильтра грубой очистки",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 300,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 118884,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена фильтра грубой очистки",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1250,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 119167,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Установка фильтра тонкой очистки \"Гейзер Классик\"",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 5000,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 119450,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Отключение стояков ГВС, ХВС (за 1 стояк)",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1400,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 119733,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена сифона к умывальнику, мойке",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 2060,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 120016,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена гофры к унитазу",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 2256,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 120299,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Развоздушивание радиатора",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 300,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 120582,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Замена крана Маевского",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 120865,
+          "slug": "",
+          "parent_id": 89,
+          "name": "Отключение стояков центрального отопления (за 1 стояк)",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1000,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": 90,
+      "slug": "electricity",
+      "parent_id": 88,
+      "name": "Электротехнические работы",
+      "title": "Электротехнические работы",
+      "teaser_card": "",
+      "teaser_list": "",
+      "data": null,
+      "children": [
+        {
+          "type": "service",
+          "id": 121148,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Диагностика",
+          "teaser_card": "Когда не знаете, что точно сломалось и какие услуги нужны. Мастер разберется на месте",
+          "teaser_list": "Когда не знаете, что точно сломалось и какие услуги нужны. Мастер разберется на месте",
+          "data": {
+            "tarif": 0,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 121431,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена лампы накаливания потолочного светильника",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 800,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 121714,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена точечного встраевомго светильника",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1500,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 121997,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена влагозащитного встраевомого светильника",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1050,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 122280,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена светильника в лоджии",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1750,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 122563,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена подвесного светодеодного светильника",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 4500,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 122846,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена патрона в светильнике",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 123129,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Ремонт слаботочной проводки в апартаменте",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 123412,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Ремонт домофона",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 123695,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Ремонт розетки\/выключателя",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 200,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 123978,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена розетки\/выключателя",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 660,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 124261,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена розетки варочной панели",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 2450,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 124544,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена вводного автомата 16А",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1250,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 124827,
+          "slug": "",
+          "parent_id": 90,
+          "name": "Замена вводного автомата 32А",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1280,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": 91,
+      "slug": "carpentry",
+      "parent_id": 88,
+      "name": "Плотницкие работы",
+      "title": "Плотницкие работы",
+      "teaser_card": "",
+      "teaser_list": "",
+      "data": null,
+      "children": [
+        {
+          "type": "service",
+          "id": 125110,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Диагностика",
+          "teaser_card": "Когда не знаете, что точно сломалось и какие услуги нужны. Мастер разберется на месте",
+          "teaser_list": "Когда не знаете, что точно сломалось и какие услуги нужны. Мастер разберется на месте",
+          "data": {
+            "tarif": 0,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 125393,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Регулировка фурнитуры оконных и дверных блоков",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 250,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 125676,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Регулировка фурнитуры шкафов",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 250,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 125959,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Замена уплотнителя в окнах и дверях за одну створку",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 400,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 126242,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Замена уплотнителя на дверях за одну створку",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 600,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 126525,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Замена накладного и врезного замка, оконных и дверных ручек",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 600,
+            "payment_type": "multi",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 126808,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Замена замка входной двери",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 1000,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 127091,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Навеска картин",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 127374,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Регулировка входной двери",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 500,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "service",
+          "id": 127657,
+          "slug": "",
+          "parent_id": 91,
+          "name": "Замена зеркала в ванной",
+          "teaser_card": "",
+          "teaser_list": "",
+          "data": {
+            "tarif": 7260,
+            "payment_type": "single",
+            "duration": null,
+            "cannot_order": false,
+            "fields": [
+            ]
+          },
+          "children": [
+          ]
+        }
+      ]
+    }
+  ]
+}

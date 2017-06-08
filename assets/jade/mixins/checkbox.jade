@@ -1,0 +1,39 @@
+//- Checkbox mixin
+//---------------------------
+mixin checkbox( className )
+	- var defaults = {};
+		- defaults.class = "styled";
+		- defaults.name = "checkbox";
+		- defaults.type = "checkbox";
+		- defaults.value = "";
+		- defaults.id = "checkbox-" + randInt(100, 1000);
+	
+	- attributes = jsonMerge(attributes, defaults);
+	
+	.checkbox( class= className )
+		input&attributes( attributes )
+		label( for= attributes.id )
+			- if( block )
+				block
+			- else
+				| #{loremIpsum(10)}
+			
+			
+//- Checkbox inline mixin
+//---------------------------
+mixin checkboxInline( className )
+	+checkbox("checkbox-inline " + (className ? className : ""))&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+			
+//- Checkbox Circled mixin
+//---------------------------
+mixin checkboxCircle( className )
+	+checkbox("checkbox-circle " + (className ? className : ""))&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}

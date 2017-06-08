@@ -1,0 +1,8 @@
+extends section-main
+
+append section-main-args
+	- sectionMainTitleHTML = "Заказ ремонта";
+	- sectionMainDescriptionHTML = "Выберите услугу и время прихода специалиста. Оплата после выполнения";
+
+block section-main-content
+	include /partials/blocks/services/block-services-cats

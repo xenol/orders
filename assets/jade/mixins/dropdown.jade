@@ -1,0 +1,342 @@
+//---------------------------
+//- Dropdown
+//---------------------------
+mixin dropdown( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	.dropdown
+		+dropdownButton( id )&attributes( attributes )
+		
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropdown Button
+//---------------------------
+mixin dropdownButton( id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+btn("btn-default dropdown-toggle with-caret")(
+		data-toggle= "dropdown"
+		aria-haspopup= "true"
+		aria-expanded= "false"
+		id= "dropdownMenu" + id
+	)&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+			
+//- Dropdown Menu
+//---------------------------
+mixin dropdownMenu( num, id )
+	+ul( num )(
+		class="dropdown-menu"
+		aria-labelledby="dropdownMenu" + id
+	)
+		- if( block )
+			block
+		- else
+			+li(): +a() #{loremIpsum(15)}
+
+//- Dropdown Primary
+//---------------------------
+mixin dropdownPrimary( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-primary" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropdown Success
+//---------------------------
+mixin dropdownSuccess( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-success" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropdown Info
+//---------------------------
+mixin dropdownInfo( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-info" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropdown Warning
+//---------------------------
+mixin dropdownWarning( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-warning" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropdown Danger
+//---------------------------
+mixin dropdownDanger( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-danger" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+
+
+//---------------------------
+//- Dropdown Size
+//---------------------------
+
+//- Dropdown Lg
+//---------------------------
+mixin dropdownLg( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-lg" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+//- Dropdown Sm
+//---------------------------
+mixin dropdownSm( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-sm" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+//- Dropdown Xs
+//---------------------------
+mixin dropdownXs( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropdown( num, id )( class= "btn-xs" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+
+
+//---------------------------
+//- Dropdown Split
+//---------------------------
+mixin dropdownSplit( num )
+	- id = id ? id : randInt( 1, 1000 );
+	- attributes.class = attributes.class ? attributes.class : "btn-default";
+	
+	.btn-group
+		+btn()&attributes( attributes )
+		+dropdownButton( id )(class="dropdown-toggle with-caret-e")&attributes( attributes )
+			span.sr-only Toggle Dropdown
+		+dropdownMenu( num, id )
+		
+//- Dropdown Split Primary
+//---------------------------
+mixin dropdownSplitPrimary( num )
+	+dropdownSplit( num )(class="btn-primary")
+		
+//- Dropdown Split Success
+//---------------------------
+mixin dropdownSplitSuccess( num )
+	+dropdownSplit( num)(class="btn-success")
+		
+//- Dropdown Split Info
+//---------------------------
+mixin dropdownSplitInfo( num )
+	+dropdownSplit( num)(class="btn-info")
+		
+//- Dropdown Split Warning
+//---------------------------
+mixin dropdownSplitWarning( num )
+	+dropdownSplit( num)(class="btn-warning")
+		
+//- Dropdown Split Danger
+//---------------------------
+mixin dropdownSplitDanger( num )
+	+dropdownSplit( num)(class="btn-danger")
+				
+				
+//---------------------------
+//- Dropup
+//---------------------------
+mixin dropup( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	.dropup
+		+dropdownButton( id )&attributes( attributes )
+		
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropup Primary
+//---------------------------
+mixin dropupPrimary( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-primary" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropup Success
+//---------------------------
+mixin dropupSuccess( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-success" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropup Info
+//---------------------------
+mixin dropupInfo( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-info" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropup Warning
+//---------------------------
+mixin dropupWarning( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-warning" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+//- Dropup Danger
+//---------------------------
+mixin dropupDanger( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-danger" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+			
+			
+			
+//---------------------------
+//- Dropup Size
+//---------------------------
+
+//- Dropup Lg
+//---------------------------
+mixin dropupLg( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-lg" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+//- Dropup Sm
+//---------------------------
+mixin dropupSm( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-sm" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+//- Dropup Xs
+//---------------------------
+mixin dropupXs( num, id )
+	- id = id ? id : randInt( 1, 1000 );
+	
+	+dropup( num, id )( class= "btn-xs" )
+		- if( block )
+			block
+			
+		- else
+			+dropdownMenu( num, id )
+
+
+
+//---------------------------
+//- Dropup Split
+//---------------------------
+mixin dropupSplit( num )
+	- id = id ? id : randInt( 1, 1000 );
+	- attributes.class = attributes.class ? attributes.class : "btn-default";
+	
+	.btn-group.dropup
+		+btn()&attributes( attributes )
+		+dropdownButton( id )(class="dropdown-toggle with-caret-e")&attributes( attributes )
+			span.sr-only Toggle Dropdown
+		+dropdownMenu( num, id )
+		
+//- Dropup Split Primary
+//---------------------------
+mixin dropupSplitPrimary( num )
+	+dropupSplit( num )(class="btn-primary")
+		
+//- Dropup Split Success
+//---------------------------
+mixin dropupSplitSuccess( num )
+	+dropupSplit( num)(class="btn-success")
+		
+//- Dropup Split Info
+//---------------------------
+mixin dropupSplitInfo( num )
+	+dropupSplit( num)(class="btn-info")
+		
+//- Dropup Split Warning
+//---------------------------
+mixin dropupSplitWarning( num )
+	+dropupSplit( num)(class="btn-warning")
+		
+//- Dropup Split Danger
+//---------------------------
+mixin dropupSplitDanger( num )
+	+dropupSplit( num)(class="btn-danger")

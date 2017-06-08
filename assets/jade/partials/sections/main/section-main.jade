@@ -1,0 +1,16 @@
+block section-main-args
+	- var sectionMain = {};
+	- var sectionMainTitle = {};
+	- var sectionMainTitleHTML = "The Title";
+	- var sectionMainDescription = {};
+	- var sectionMainDescriptionHTML = "The Description";
+
+block section-main-before
+
+section.section-main&attributes( sectionMain )
+	block section-main-title
+		h1.section-title&attributes( sectionMainTitle )!= sectionMainTitleHTML
+		.section-description&attributes( sectionMainDescription )!= sectionMainDescriptionHTML
+	
+	block section-main-content
+		include /partials/blocks/services/block-services

@@ -1,0 +1,8 @@
+'use strict';
+
+define(['angular'], function (ng) {
+	'use strict';
+
+	return ng.module('app.filters', []);
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZpbHRlcnMvbW9kdWxlLmpzIl0sIm5hbWVzIjpbImRlZmluZSIsIm5nIiwibW9kdWxlIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPLENBQUMsU0FBRCxDQUFQLEVBQW9CLFVBQVVDLEVBQVYsRUFBYztBQUNqQzs7QUFDQSxRQUFPQSxHQUFHQyxNQUFILENBQVUsYUFBVixFQUF5QixFQUF6QixDQUFQO0FBQ0EsQ0FIRCIsImZpbGUiOiJmaWx0ZXJzL21vZHVsZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImRlZmluZShbJ2FuZ3VsYXInXSwgZnVuY3Rpb24gKG5nKSB7XG5cdCd1c2Ugc3RyaWN0Jztcblx0cmV0dXJuIG5nLm1vZHVsZSgnYXBwLmZpbHRlcnMnLCBbXSk7XG59KTtcbiJdfQ==

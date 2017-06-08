@@ -1,0 +1,24 @@
+extends block-calculator
+
+append calculator-args
+	- calculator["data-ng-controller"] = "CartCtrl";
+
+block calculator-total
+	span( data-ng-if="quantity()" ) {{total() | customCurrency:"&#8381;":".":" ":0:false}}
+	
+block calculator-panel-before
+block calculator-date
+	.col-xs-12.col-sm-12( data-ng-if="quantity()" )
+		label.bold.m-b-15 {{"Choose a convenient day and time" | translate}}
+		
+		form.form-inline.block-calculator__date-form
+			pikaday
+			tetherselect
+			
+	.col-xs-12.col-sm-12( data-ng-show="!quantity()" )
+		| {{"Before selecting the date and time you must select the services" | translate}}
+					
+block calculator-button-before
+	button.btn.btn-orders( data-ng-if="quantity()" data-ng-click="go('thanks')" )
+		block calculator-button
+			| {{"To order" | translate}}

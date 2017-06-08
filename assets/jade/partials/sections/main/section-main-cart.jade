@@ -1,0 +1,9 @@
+extends section-main
+
+append section-main-args
+	- sectionMainTitleHTML = "Заказ ремонта";
+	- sectionMainDescriptionHTML = "";
+
+block section-main-content
+	include /partials/blocks/services/block-services-cart
+	include /partials/blocks/calculator/block-calculator-cart

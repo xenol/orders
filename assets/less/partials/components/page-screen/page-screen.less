@@ -1,0 +1,24 @@
+// Module Screen Content
+// Adds screen mode info to container through a property 'content'
+// --------------------------------------
+ 
+#page-screen {
+	display: none;
+}
+
+@media (max-width: @screen-xs-max) {
+	.responsive #page-screen { content: "xs"; }
+	.no-responsive #page-screen { content: "md"; }
+}
+
+@media (min-width: @screen-sm-min) {
+	#page-screen { content: "sm"; }
+}
+
+@media (min-width: @screen-md-min) {
+	#page-screen { content: "md"; }
+}
+
+@media (min-width: @screen-lg-min) {
+	#page-screen { content: "lg"; }
+}

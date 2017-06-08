@@ -1,0 +1,51 @@
+//---------------------------
+//- Aside mixins
+//---------------------------
+	
+//- Aside mixin
+//---------------------------
+mixin aside( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		- defaults.id = false;
+		
+	#{tag ? tag : "aside"}&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			+asideTitle()
+			+asideDesc()
+			| #{loremIpsum(25)}
+	
+//- Aside Title mixin
+//---------------------------
+mixin asideTitle( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	#{tag ? tag: "h3"}.aside-title&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(25)}
+	
+//- Aside Description mixin
+//---------------------------
+mixin asideDescrition( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	#{tag ? tag: "div"}.aside-description&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(50)}
+	
+//- Aside Description alias mixin
+//---------------------------
+mixin asideDesc( className, tag )
+	+asideDescrition( className, tag )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(50)}

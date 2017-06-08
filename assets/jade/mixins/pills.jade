@@ -1,0 +1,30 @@
+//----------------------------------
+//- Pills mixins
+//----------------------------------
+
+//- Simple Pills mixin
+//----------------------------------
+mixin pills( num )
+	+ul( num )( class="nav nav-pills" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == 0 } role="presentation" ): +a() #{loremIpsum(10)}
+
+//- Pills Justify mixin
+//----------------------------------
+mixin pillsJustify( num )
+	+pills( num )(class="nav-justified")
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == 0 } role="presentation" ): +a() #{loremIpsum(10)}
+
+//- Pills Stacked mixin
+//----------------------------------
+mixin pillsStack( num )
+	+pills( num )(class="nav-stacked")
+		- if( block )
+			block
+		- else
+			+li()( class= { "active": i == 0 } role="presentation" ): +a() #{loremIpsum(10)}

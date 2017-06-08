@@ -1,0 +1,6 @@
+'use strict';
+
+define([
+//'./CalculatorCtrl',
+'./CartCtrl', './MainCtrl'], function () {});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRyb2xsZXJzL2luZGV4LmpzIl0sIm5hbWVzIjpbImRlZmluZSJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsT0FBTztBQUNOO0FBQ0EsWUFGTSxFQUdOLFlBSE0sQ0FBUCxFQUlHLFlBQVksQ0FBRSxDQUpqQiIsImZpbGUiOiJjb250cm9sbGVycy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImRlZmluZShbXG5cdC8vJy4vQ2FsY3VsYXRvckN0cmwnLFxuXHQnLi9DYXJ0Q3RybCcsXG5cdCcuL01haW5DdHJsJyxcbl0sIGZ1bmN0aW9uICgpIHt9KTtcbiJdfQ==

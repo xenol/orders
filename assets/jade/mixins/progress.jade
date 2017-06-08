@@ -1,0 +1,144 @@
+//- Progress Bar mixin
+//--------------------------------------
+mixin progress( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	.progress
+		.progress-bar&attributes( attributes )
+			- if( block )
+				block
+			- else
+				| #{attributes["aria-valuenow"]}%
+				
+				
+				
+//--------------------------------------
+//- Progress Bar Colors
+//--------------------------------------
+//- Progress Bar Success mixin
+//--------------------------------------
+mixin progressSuccess( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+progress( valuenow )( class= "progress-bar-success" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{attributes["aria-valuenow"]}%
+				
+//- Progress Bar Info mixin
+//--------------------------------------
+mixin progressInfo( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+progress( valuenow )( class= "progress-bar-info" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{attributes["aria-valuenow"]}%
+				
+//- Progress Bar Warning mixin
+//--------------------------------------
+mixin progressWarning( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+progress( valuenow )( class= "progress-bar-warning" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{attributes["aria-valuenow"]}%
+				
+//- Progress Bar Danger mixin
+//--------------------------------------
+mixin progressDanger( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+progress( valuenow )( class= "progress-bar-danger" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{attributes["aria-valuenow"]}%
+				
+				
+				
+//--------------------------------------
+//- Progress Bar Striped mixin
+//--------------------------------------
+mixin progressStriped( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+progress( valuenow )( class= "progress-bar-striped" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			.sr-only #{attributes["aria-valuenow"]}% Complete
+				
+				
+				
+//--------------------------------------
+//- Progress Bar Animated mixin
+//--------------------------------------
+mixin progressAnimated( valuenow )
+	- var defaults = {};
+		- defaults.class = "";
+		- defaults.role = "progressbar";
+		- defaults["aria-valuenow"]= valuenow ? valuenow : 40;
+		- defaults["aria-valuemin"] = 0;
+		- defaults["aria-valuemax"] = 100;
+		- defaults["style"] = "width: " + defaults["aria-valuenow"] + "%; min-width: 2%";
+		
+	- attributes = jsonMerge(attributes, defaults);
+	
+	+progress( valuenow )( class= "progress-bar-striped active" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			.sr-only #{attributes["aria-valuenow"]}% Complete

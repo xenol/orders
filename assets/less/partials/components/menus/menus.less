@@ -1,0 +1,58 @@
+// Menus classes
+// ======================================
+
+// menu-comma
+// --------------------------------------
+.menu-comma {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 20px;
+	
+	& > li {
+		display: inline-block;
+		padding: 0;
+		position: relative;
+		margin-right: 4px;
+		
+		&::after {
+			white-space: nowrap;
+			content: ",";
+			position: absolute;
+			right: -3px;
+			bottom: 0;
+		}
+		
+		&:last-child,
+		&.noseparator {
+			margin-right: 0;
+			
+			&::after {
+				content: "";
+				right: 0;
+			}
+		}
+		
+		& > a {
+			._u();
+		}
+	}
+}
+
+
+// menu-inline
+// --------------------------------------
+.menu-inline {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 20px;
+	
+	& > li {
+		display: inline-block;
+		margin-right: 4px;
+		margin-bottom: 5px;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

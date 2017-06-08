@@ -1,0 +1,9 @@
+//- Link mixin
+//- Return link element
+//---------------------------
+mixin a()
+	a( href="#" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(20)}

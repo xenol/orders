@@ -1,0 +1,53 @@
+// Border Widths for xs mode
+// ======================================
+
+// border-top
+.b-t-0-xs {
+	border-top-width: 0 !important;
+}
+
+.b-t-1-xs {
+	border-top-width: 1px !important;
+}
+
+// border-bottom
+.b-b-0-xs {
+	border-bottom-width: 0 !important;
+}
+
+.b-b-1-xs {
+	border-bottom-width: 1px !important;
+}
+
+// border-right
+.b-r-0-xs {
+	border-right-width: 0 !important;
+}
+
+.b-r-1-xs {
+	border-right-width: 1px !important;
+}
+
+// border-left
+.b-l-0-xs {
+	border-left-width: 0 !important;
+}
+
+.b-l-1-xs {
+	border-left-width: 1px !important;
+}
+
+// borders left and right
+.b-x-0-xs:extend( .b-r-0-xs, .b-l-0-xs ) {};
+
+.b-x-1-xs:extend( .b-r-1-xs, .b-l-1-xs ) {};
+
+// borders top and bottom
+.b-y-0-xs:extend( .b-t-0-xs, .b-b-0-xs ) {};
+
+.b-y-1-xs:extend( .b-t-1-xs, .b-b-1-xs ) {};
+
+// borders all
+.b-a-0-xs:extend( .b-t-0-xs, .b-r-0-xs, .b-b-0-xs, .b-l-0-xs ) {}
+
+.b-a-1-xs:extend( .b-t-1-xs, .b-r-1-xs, .b-b-1-xs, .b-l-1-xs ) {}

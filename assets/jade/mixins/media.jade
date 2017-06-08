@@ -1,0 +1,115 @@
+//- Media mixin
+//--------------------------------------
+mixin media( className, mode )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		- defaults.imgWidth = 300;
+		- defaults.mode = mode ? mode : "left";
+		
+	- attributes = jsonMerge(attributes, defaults);
+		
+	.media( class= attributes.class )
+		- if( attributes.mode == "left" )
+			.media-left
+				+mediaObject( attributes.imgWidth )
+		
+		.media-body
+			- if( block )
+				block
+			- else
+				+mediaLinkBody("lead _u")
+		
+		- if( attributes.mode == "right" )
+			.media-right
+				+mediaObject( attributes.imgWidth )
+
+//- Media Object mixin
+//--------------------------------------
+mixin mediaObject( width )
+	+a(): +img( width, "media-object" )
+
+//- Media Link Body
+//--------------------------------------
+mixin mediaLinkBody( className )
+	+mediaLinkTitle( className )
+	+mediaContent()
+	+mediaFooter()
+
+//- Media Body
+//--------------------------------------
+mixin mediaDivBody( className )
+	+mediaTitle( className )
+	+mediaContent()
+	+mediaFooter()
+
+//- Media Title
+//--------------------------------------
+mixin mediaTitle( className )
+	div.media-heading( class= className ? className : "" ) #{loremIpsum(20)}
+
+//- Media Link Title
+//--------------------------------------
+mixin mediaLinkTitle( className )
+	+a( ( className ? className : "_u")  + " media-heading" )&attributes( attributes )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(25)}
+
+//- Media Content
+//--------------------------------------
+mixin mediaContent( className )
+	.media-content( class= className ? className : "" )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(150)}
+
+//- Media Footer
+//--------------------------------------
+mixin mediaFooter( className )
+	footer( class= className ? className : "" )
+		- if( block )
+			block
+		- else
+			+faDate()
+			+faComments()
+			+faViews()
+
+//- Media H3
+//--------------------------------------
+mixin mediaH3( className, mode )
+	+media( className, mode )
+		+mediaDivBody("h3")
+
+//- Media H4
+//--------------------------------------
+mixin mediaH4( className, mode )
+	+media( className, mode )
+		+mediaDivBody("h4")
+
+//- Media 10
+//--------------------------------------
+mixin media-10( mode )
+	+media( "media-10", mode )
+		+mediaLinkTitle()
+
+//- Media 20
+//--------------------------------------
+mixin media-20( mode )
+	+media( "media-20", mode )
+
+//- Media 30
+//--------------------------------------
+mixin media-30( mode )
+	+media( "media-30", mode )
+
+//- Media 40
+//--------------------------------------
+mixin media-40( mode )
+	+media( "media-40", mode )
+
+//- Media 50
+//--------------------------------------
+mixin media-50( mode )
+	+media( "media-50", mode )

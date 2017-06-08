@@ -1,0 +1,49 @@
+//----------------------------------
+//- Navbar mixin
+//----------------------------------
+
+//----------------------------------
+//- Buttons
+//----------------------------------
+
+//- Navbar Btn
+//----------------------------------
+mixin navbarBtn( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn-default";
+		
+	+btnNavbar()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+
+//- Navbar Button
+//----------------------------------
+mixin navbarButton( className )
+	- var defaults = {};
+		- defaults.class = className ? className : "btn-default";
+		
+	+buttonNavbar()&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			| #{loremIpsum(10)}
+	
+//- Navbar Toggle
+//----------------------------------
+mixin navbarToggle( className )
+	- var defaults = {};
+		- defaults["aria-expanded"] = "false";
+		- defaults.class = className ? className : "";
+		- defaults["data-target"] = "#navbar-collapse";
+		- defaults["data-toggle"] = "collapse";
+		
+	+button()(class="navbar-toggle collapsed")&attributes( jsonMerge(attributes, defaults) )
+		- if( block )
+			block
+		- else
+			span.sr-only Toggle navigation
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar

@@ -1,0 +1,15 @@
+extends block-calculator
+
+append calculator-args
+	- calculator["data-ng-controller"] = "CartCtrl";
+
+block calculator-total
+	.p-b-10
+		span( data-ng-if="quantity()" ) {{total() | customCurrency:"&#8381;":".":" ":0:false}}
+	
+block calculator-panel-before
+block calculator-date-before
+block calculator-button-before
+	button.btn.btn-orders( data-ng-if="quantity()" data-ng-click="go('checkout')" )
+		block calculator-button
+			| {{"Go to the date and time" | translate}} #[span.arrow.arrow-right.block-calculator__arrow]

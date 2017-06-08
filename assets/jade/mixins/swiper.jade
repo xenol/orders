@@ -1,0 +1,22 @@
+//- Swiper mixin
+//---------------------------
+mixin swiper( num, className )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		
+	.swiper-container&attributes( jsonMerge(attributes, defaults) )
+		.swiper-wrapper
+			+loop( num )
+				- if( block )
+					block
+				- else
+					+swiperSlide()
+		
+//- Swiper Slide mixin
+//---------------------------
+mixin swiperSlide()
+	.swiper-slide
+		- if( block )
+			block
+		- else
+			+a(): +img()

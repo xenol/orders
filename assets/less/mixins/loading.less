@@ -1,0 +1,53 @@
+// Mixin Loading
+// Add rotating font-awesome symbol on the center of container
+// ======================================
+
+.set-loading()
+{
+	position: relative;
+	visibility: hidden;
+	
+	&::before
+	{
+		content: "\f110";
+		line-height: 1;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		.font-type(fontawesome);
+		font-size: inherit;
+		color: inherit;
+		font-weight: normal;
+		font-style: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		visibility: visible;
+	}
+	
+	@keyframes rotation {
+		from { transform: translate(-50%, -50%) rotate(0deg); }
+		to { transform: translate(-50%, -50%) rotate(359deg); }
+	}
+}
+
+.loading(@steps)
+{
+	.set-loading();
+	
+	&::before
+	{
+		animation: rotation 1s infinite steps(@steps);
+	}
+}
+
+
+.loading()
+{
+	.set-loading();
+	
+	&::before
+	{
+		animation: rotation 2s infinite linear;
+	}
+}

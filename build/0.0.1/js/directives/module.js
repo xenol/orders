@@ -1,0 +1,1 @@
+"use strict";define("directives/module",["angular"],function(e){return e.module("app.directives",[])});

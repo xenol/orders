@@ -1,0 +1,183 @@
+@panel-padding: @thumbnail-padding;
+
+.panel-code {
+	
+	&__body {
+		padding-top: 20px !important;
+		position: relative;
+		
+		&:before {
+			content: "ПРИМЕР";
+			font-weight: bold;
+			color: @gray_40;
+			//padding: 5px 15px 0;
+			display: inline-block;
+			letter-spacing: 1px;
+			//border: 1px solid red;
+			position: relative;
+			//left: 30px;
+			top: -10px;
+		}
+	}
+	
+	&__item {
+		padding: 0 !important;
+		margin: 0 !important;
+		border: none;
+		background: inherit !important;
+	}
+}
+
+
+
+.panel
+{
+	position: relative;
+	
+	&.panel-content > .panel-body {
+		padding: 20px 30px 30px;
+	}
+	
+	&.panel-content:before {
+		content: attr( data-content );
+		font-weight: bold;
+		color: @gray_40;
+		padding: 5px 15px 0;
+		display: inline-block;
+		letter-spacing: 1px;
+	}
+	
+	& > .panel-heading
+	{
+		& > .panel-title {}
+		
+		& > span {
+			.font-type(sans-condensed);
+			font-size: 90%;
+			line-height: @line-height-computed;
+			margin-right: 10px;
+			white-space: nowrap;
+			
+			& > .fa {
+				margin-right: 5px;
+				white-space: nowrap;
+			}
+			
+			&.pull-right,
+			&.pull-left {}
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	& > .panel-body
+	{
+		padding: @panel-body-padding;
+		
+		&::after
+		{
+			clear:right;
+		}
+	}
+	
+	& > .panel-footer
+	{
+		& > span {
+			.font-type(sans-condensed);
+			font-size: 90%;
+			line-height: @line-height-computed;
+			margin-right: 10px;
+			white-space: nowrap;
+			
+			& > .fa {
+				margin-right: 5px;
+				white-space: nowrap;
+			}
+			
+			&.pull-right,
+			&.pull-left {}
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		
+		&.fix {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			margin: 0;
+		}
+	}
+	
+	&.gallery,
+	&.panel-gallery
+	{
+		& > .panel-body
+		{
+			padding: @panel-padding;
+		}
+	}
+	
+	&.wide,
+	&.panel-wide
+	{
+		& > .panel-body
+		{
+			border: 1px solid @white;
+			padding: 0;
+		}
+	}
+	
+	&.fixed,
+	&.panel-fixed
+	{
+		overflow: hidden;
+	}
+	
+	&.panel-collapse
+	{
+		padding: 0;
+		
+		& > .panel-heading {
+			position: relative;
+			cursor: pointer;
+			
+			&::after {
+				position: absolute;
+				.font-type(fontawesome);
+				content: "\f146";
+				right: 15px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 14px;
+				height: 14px;
+				line-height: 1;
+				opacity: 0.5;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			&.closed {
+				&::after {
+					content: "\f0fe";
+				}
+				
+				border-bottom-color: transparent;
+			}
+		}
+		
+		& > .panel-body {
+			padding: 0;
+			
+			& > .collapsed-content
+			{
+				padding: @panel-body-padding;
+			}
+		}
+	}
+}

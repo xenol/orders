@@ -1,0 +1,89 @@
+// Fonts mixins.
+
+
+// Available fonts
+.font-type(@type: sans) when (@type = sans) {
+	font-family: @font-family-sans-serif;
+	@font-type: @type;
+}
+
+.font-type(@type) when (@type = sans-condensed) {
+	font-family: @font-family-sans-serif-condensed;
+	@font-type: @type;
+}
+
+.font-type(@type) when (@type = serif) {
+	font-family: @font-family-serif;
+	@font-type: @type;
+}
+
+.font-type(@type) when (@type = fontawesome) {
+	font-family: @font-family-fontawesome;
+	@font-type: @type;
+}
+
+.font-type(@type) when (@type = lobster) {
+	font-family: @font-family-lobster;
+	@font-type: @type;
+}
+
+
+// Sans-serif available weights
+.font-weight(@weight: normal, @font-type: sans) when (@font-type = sans) and (@weight = normal) {
+	font-weight: @font-sans-serif-normal;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = sans) and (@weight = light) {
+	font-weight: @font-sans-serif-light;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = sans) and (@weight = bold) {
+	font-weight: @font-sans-serif-bold;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = sans) and (@weight = black) {
+	font-weight: @font-sans-serif-black;
+	@font-weight: @weight;
+}
+
+// Sans-serif-condensed available weights
+.font-weight(@weight, @font-type) when (@font-type = sans-condensed) and (@weight = normal) {
+	font-weight: @font-sans-serif-condensed-normal;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = sans-condensed) and (@weight = light) {
+	font-weight: @font-sans-serif-condensed-light;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = sans-condensed) and (@weight = bold) {
+	font-weight: @font-sans-serif-condensed-bold;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = sans-condensed) and (@weight = black) {
+	font-weight: @font-sans-serif-condensed-black;
+	@font-weight: @weight;
+}
+
+// Serif available weights
+.font-weight(@weight, @font-type) when (@font-type = serif) and (@weight = normal) {
+	font-weight: @font-serif-normal;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = serif) and (@weight = light) {
+	font-weight: @font-serif-light;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = serif) and (@weight = bold) {
+	font-weight: @font-serif-bold;
+	@font-weight: @weight;
+}
+.font-weight(@weight, @font-type) when (@font-type = serif) and (@weight = black) {
+	font-weight: @font-serif-black;
+	@font-weight: @weight;
+}
+
+// FontAwesome available weights
+.font-weight(@weight, @font-type) when (@font-type = fontawesome) {
+	font-weight: @font-fontawesome-normal;
+	@font-weight: @weight;
+}

@@ -1,0 +1,10 @@
+'use strict';
+
+define(['./module', 'underscore'], function (filters, _) {
+	'use strict';
+
+	filters.value('pikadayData', {
+		date: "1"
+	});
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2VzL3Bpa2FkYXlEYXRhLmpzIl0sIm5hbWVzIjpbImRlZmluZSIsImZpbHRlcnMiLCJfIiwidmFsdWUiLCJkYXRlIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPLENBQUMsVUFBRCxFQUFhLFlBQWIsQ0FBUCxFQUFtQyxVQUFDQyxPQUFELEVBQVVDLENBQVYsRUFBZ0I7QUFDbEQ7O0FBRUFELFNBQVFFLEtBQVIsQ0FBYyxhQUFkLEVBQTZCO0FBQzVCQyxRQUFPO0FBRHFCLEVBQTdCO0FBR0EsQ0FORCIsImZpbGUiOiJzZXJ2aWNlcy9waWthZGF5RGF0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImRlZmluZShbJy4vbW9kdWxlJywgJ3VuZGVyc2NvcmUnXSwgKGZpbHRlcnMsIF8pID0+IHtcblx0J3VzZSBzdHJpY3QnO1xuXHRcblx0ZmlsdGVycy52YWx1ZSgncGlrYWRheURhdGEnLCB7XG5cdFx0ZGF0ZSA6IFwiMVwiLFxuXHR9KTtcbn0pO1xuIl19

@@ -1,0 +1,1 @@
+"use strict";define("filters/module",["angular"],function(n){return n.module("app.filters",[])}),define("filters/inclination",["./module"],function(n){return n.filter("inclination",[function(){return function(n,e){var i=String(e)[String(e).length-1];return e=parseInt(e)||0,"0,5,6,7,8,9".indexOf(i)+1||e>=10&&e<=20?"services_1":"1"==i?"services_2":"services"}}])});

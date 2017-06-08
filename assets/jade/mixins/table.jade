@@ -1,0 +1,41 @@
+//- Table Responsive mixin
+//---------------------------
+mixin table( className, tag )
+	- var defaults = {};
+		- defaults.class = className ? className : "";
+		- defaults.role = "table";
+		
+	- var num = num ? num : 3;
+	
+	- attributes = jsonMerge(attributes, defaults);
+	
+	.table-responsive
+		#{tag ? tag : "div"}.table&attributes( jsonMerge(attributes, defaults) )
+			- if( block )
+				block
+			- else
+				+thRow( 3, false, (tag == "table") ? "th" : false )
+				+loop( 2 )
+					+tdRow( 3, false, (tag == "table") ? "td" : false )
+				
+//- Td mixin
+//---------------------------
+mixin tdRow( num, trClass, tag )
+	#{(tag == "td") ? "tr" : "div"}.tr( class= trClass ? trClass : "" )
+		+loop( num )
+			#{tag ? tag : "div"}.td&attributes( attributes )
+				- if( block )
+					block
+				- else
+					| #{loremIpsum(10)}
+				
+//- Th mixin
+//---------------------------
+mixin thRow( num, trClass, tag )
+	#{(tag == "th") ? "tr" : "div"}.tr( class= trClass ? trClass : "" )
+		+loop( num )
+			#{tag ? tag : "div"}.th&attributes( attributes )
+				- if( block )
+					block
+				- else
+					| #{loremIpsum(10)}
