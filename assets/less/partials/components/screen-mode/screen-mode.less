@@ -1,0 +1,25 @@
+// The screen mode
+// Adds screen mode info to container through a property 'content'
+// --------------------------------------
+ 
+#screen-mode {
+	display: none;
+}
+
+@media (max-width: @screen-xs-max) {
+	#screen-mode { content: "xs"; }
+	.responsive #screen-mode { content: "xs"; }
+	.no-responsive #screen-mode { content: "md"; }
+}
+
+@media (min-width: @screen-sm-min) {
+	#screen-mode { content: "sm"; }
+}
+
+@media (min-width: @screen-md-min) {
+	#screen-mode { content: "md"; }
+}
+
+@media (min-width: @screen-lg-min) {
+	#screen-mode { content: "lg"; }
+}
