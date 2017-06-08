@@ -5,7 +5,7 @@ define([
 	'./controllers/index',
 	'./directives/index',
 	'./filters/index',
-	//'./services/index',
+	'./services/index',
 ],  angular => {
 	'use strict';
 
@@ -13,7 +13,7 @@ define([
 		'app.controllers',
 		'app.directives',
 		'app.filters',
-		//'app.services',
+		'app.services',
 		'ngRoute',
 		'ngStorage'
 	]);

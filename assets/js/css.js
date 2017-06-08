@@ -3,8 +3,8 @@ define([], () => {
 	
 	return {
 		pace: [
-			'//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css',
-			'/bower_components/PACE/themes/blue/pace-theme-minimal.css'
+			'//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/green/pace-theme-minimal.min.css',
+			'/bower_components/PACE/themes/green/pace-theme-minimal.css'
 		],
 		pikaday: [
 			'//cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.0/css/pikaday.min.css',

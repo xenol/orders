@@ -3,6 +3,7 @@ extends /partials/sections/main/section-main-ng
 append section-main-args
 	- sectionMain["data-ng-controller"] = "CartCtrl";
 	- sectionMainDescription = {};
+	- sectionMainDescription["data-ng-if"] = "description";
 
 block section-main-content
 	include /partials/blocks/services/block-services-cart-ng

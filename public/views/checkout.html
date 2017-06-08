@@ -2,7 +2,7 @@
 <breadcrumbs></breadcrumbs>
 <section class="section-main" data-ng-controller="CartCtrl">
   <h1 class="section-title" data-ng-bind="title"></h1>
-  <div class="section-description"></div>
+  <div class="section-description" data-ng-if="description"></div>
   <div class="block-calculator" data-ng-controller="CartCtrl">
     <div class="f-s-h2 text-center block-calculator__total"><span data-ng-if="quantity()">{{total() | customCurrency:"&#8381;":".":" ":0:false}}</span></div>
     <div class="row block-calculator__date cb">

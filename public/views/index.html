@@ -2,7 +2,7 @@
 <breadcrumbs></breadcrumbs>
 <section class="section-main" data-ng-controller="MainCtrl">
   <h1 class="section-title" data-ng-bind="title"></h1>
-  <div class="section-description" data-ng-bind="description"></div>
+  <div class="section-description" data-ng-bind="description" data-ng-if="description"></div>
   <div class="block-services cb">
     <div data-ng-repeat="child in info.children" class="block-services__item">
       <div class="row">

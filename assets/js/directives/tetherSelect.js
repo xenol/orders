@@ -1,13 +1,13 @@
-define(['./module', 'tetherSelect', 'tether'], ( directives, Select ) => {
+define(['./module', 'tetherSelect'], ( directives, Select ) => {
 	'use strict';
 	
-	directives.directive('tetherselect', [() => {
+	directives.directive('tetherselect', ['screenMode', ( screenMode ) => {
 		return {
 			restrict: 'E',
 			replace: true,
 			transclude: true,
 			template: '<div data-ng-class="tetherSelectClass">' +
-					    '<select class="tether-select" ng-model="time" ng-change="changeTime(time)">' +
+					    '<select class="tether-select form-control" ng-model="time" ng-change="changeTime(time)">' +
 					      '<option ng-repeat="option in options" value="{{option.value}}">{{option.name}}</option>' +
 					    '</select>' +
 					  '</div>',
@@ -16,7 +16,7 @@ define(['./module', 'tetherSelect', 'tether'], ( directives, Select ) => {
 					constructor( element = false ) {
 						this.element = element;
 						this.options = this.defaults();
-						this.init();
+						this.select = this.init();
 					}
 					
 					defaults() {
@@ -35,20 +35,24 @@ define(['./module', 'tetherSelect', 'tether'], ( directives, Select ) => {
 					}
 					
 					init() {
-						if( !this.element.classList.contains('select-select') ) {
-							return Select.init({
-								el: this.element,
-								className: 'tether-select-theme select-target-lg'
-							});
-						}
+						if( screenMode() == "xs" ) return;
+						
+						return Select.init({
+							el: this.element,
+							className: 'tether-select-theme select-target-lg',
+							useNative: false,
+						});
+					}
+					
+					get time() {
+						return this.options[0].name;
 					}
 				}
 				
 				let tetherSelect = new TetherSelect( element[0].childNodes[0] );
 				
 				scope.options = tetherSelect.options;
-				
-				scope.time = "09:00";
+				scope.time = tetherSelect.time;
 			}
 		}
 	}]);

@@ -5,7 +5,7 @@ block services-items
 		.row
 			.col-xs-12.col-sm-7
 				a.block-services__a( href="#!/{{child.routeParams.slug | escAttr}}/{{child.id | escAttr}}" title="{{(child.title || child.name) | escAttr}}" ) {{child.title || child.name}}
-				.small.m-t-5 {{child.teaser_card || child.teaser_list}}
+				.small.m-t-5( data-ng-if="child.teaser_card || child.teaser_list" ) {{child.teaser_card || child.teaser_list}}
 				
 			.col-xs-10.col-sm-4.block-services__price.text-right.p-r-20
 				span( data-ng-if="child.data.tarif > 0" ) {{child.data.tarif * child.num | customCurrency:"&#8381;":".":" ":0:false}}
